@@ -46,7 +46,7 @@ const Navbar = () => {
         <div className="w-full font-sans">
             {/* Top Bar */}
             <div className="bg-topbar text-center py-2 px-4 shadow-sm z-50 relative">
-                <p className="text-white font-medium text-sm md:text-base tracking-wide">
+                <p className="text-white font-medium text-xs sm:text-sm md:text-base tracking-wide">
                     ✨ Sparkling Homes, Happy Hearts – Experience the <span className="font-bold underline">Pure Magic Clean</span> Today! ✨
                 </p>
             </div>
@@ -61,7 +61,7 @@ const Navbar = () => {
                             <img
                                 src={logoImg}
                                 alt="Pure Magic"
-                                className="h-16 md:h-[7rem] w-auto object-contain transition-all duration-300 origin-left hover:scale-105"
+                                className="h-12 sm:h-14 md:h-16 lg:h-[7rem] w-auto object-contain transition-all duration-300 origin-left hover:scale-105"
                             />
                         </a>
                     </div>
@@ -180,7 +180,7 @@ const Navbar = () => {
                                             <div>
                                                 <button
                                                     onClick={() => setActiveDropdown(activeDropdown === link.name ? null : link.name)}
-                                                    className="w-full flex justify-between items-center py-2 text-gray-800 font-bold text-lg"
+                                                    className="w-full flex justify-between items-center py-2 text-gray-800 font-bold text-base sm:text-lg"
                                                 >
                                                     {link.name}
                                                     <ChevronDown
@@ -191,13 +191,13 @@ const Navbar = () => {
                                                 {activeDropdown === link.name && (
                                                     <div className="pl-4 pb-2 space-y-2 text-gray-600">
                                                         {link.items.map((item, i) => (
-                                                            <a key={i} href="#" className="block py-1 text-base">{item}</a>
+                                                            <a key={i} href="#" className="block py-1 text-sm sm:text-base">{item}</a>
                                                         ))}
                                                     </div>
                                                 )}
                                             </div>
                                         ) : (
-                                            <a href={link.href} className="block py-2 text-gray-800 font-bold text-lg">
+                                            <a href={link.href} className="block py-2 text-gray-800 font-bold text-base sm:text-lg">
                                                 {link.name}
                                             </a>
                                         )}
@@ -207,12 +207,12 @@ const Navbar = () => {
 
                             {/* Mobile CTA */}
                             <div className="pt-4 flex flex-col gap-4">
-                                <a href="tel:6177428080" className="flex items-center justify-center gap-2 text-primary font-bold text-xl">
-                                    <Phone size={24} /> (617) 742-8080
+                                <a href="tel:6177428080" className="flex items-center justify-center gap-2 text-primary font-bold text-lg sm:text-xl">
+                                    <Phone size={22} className="sm:w-6 sm:h-6" /> (617) 742-8080
                                 </a>
                                 <a
                                     href="#"
-                                    className="block w-full text-center bg-maid-green text-white py-3 rounded-md font-bold text-lg shadow-md"
+                                    className="block w-full text-center bg-maid-green text-white py-3 sm:py-3.5 rounded-md font-bold text-base sm:text-lg shadow-md min-h-[44px]"
                                 >
                                     Book now
                                 </a>

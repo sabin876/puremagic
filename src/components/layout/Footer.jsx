@@ -13,20 +13,20 @@ const Footer = () => {
 
                     <div className="col-span-1 md:col-span-1">
                         <div className="flex items-center gap-2 mb-6">
-                            <img src={logoImg} alt="PureMagic" className="h-20 w-auto" />
+                            <img src={logoImg} alt="PureMagic" className="h-16 sm:h-18 md:h-20 w-auto" />
                         </div>
                         <p className="text-gray-400 mb-6 leading-relaxed text-sm">
                             Australia's most trusted cleaning service. We bring professional, eco-friendly, and reliable cleaning solutions to your doorstep.
                         </p>
                         <div className="flex gap-4">
-                            <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors text-white"><Facebook size={18} /></a>
-                            <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors text-white"><Instagram size={18} /></a>
-                            <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors text-white"><Twitter size={18} /></a>
+                            <a href="#" className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors text-white"><Facebook size={18} /></a>
+                            <a href="#" className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors text-white"><Instagram size={18} /></a>
+                            <a href="#" className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors text-white"><Twitter size={18} /></a>
                         </div>
                     </div>
 
                     <div>
-                        <h4 className="text-lg font-bold mb-6 text-white border-b-2 border-primary w-fit pb-2">Quick Links</h4>
+                        <h4 className="text-base sm:text-lg font-bold mb-6 text-white border-b-2 border-primary w-fit pb-2">Quick Links</h4>
                         <ul className="space-y-3 text-sm text-gray-400">
                             <li><a href="#home" className="hover:text-primary transition-colors hover:translate-x-1 inline-block">Home</a></li>
                             <li><a href="#about" className="hover:text-primary transition-colors hover:translate-x-1 inline-block">About Us</a></li>
@@ -37,7 +37,7 @@ const Footer = () => {
                     </div>
 
                     <div>
-                        <h4 className="text-lg font-bold mb-6 text-white border-b-2 border-primary w-fit pb-2">Our Services</h4>
+                        <h4 className="text-base sm:text-lg font-bold mb-6 text-white border-b-2 border-primary w-fit pb-2">Our Services</h4>
                         <ul className="space-y-3 text-sm text-gray-400">
                             <li><a href="#" className="hover:text-primary transition-colors hover:translate-x-1 inline-block">House Cleaning</a></li>
                             <li><a href="#" className="hover:text-primary transition-colors hover:translate-x-1 inline-block">End of Lease</a></li>
@@ -48,7 +48,7 @@ const Footer = () => {
                     </div>
 
                     <div>
-                        <h4 className="text-lg font-bold mb-6 text-white border-b-2 border-primary w-fit pb-2">Contact Us</h4>
+                        <h4 className="text-base sm:text-lg font-bold mb-6 text-white border-b-2 border-primary w-fit pb-2">Contact Us</h4>
                         <ul className="space-y-4 text-sm text-gray-400">
                             <li className="flex items-start gap-3">
                                 <Phone size={18} className="text-primary mt-0.5 shrink-0" />

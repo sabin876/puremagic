@@ -45,7 +45,7 @@ const Hero = () => {
                                 hidden: { opacity: 0, y: 20 },
                                 visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
                             }}
-                            className="text-white font-bold tracking-wider uppercase mb-4 text-sm md:text-base"
+                            className="text-white font-bold tracking-wider uppercase mb-3 sm:mb-4 text-xs sm:text-sm md:text-base"
                         >
                             Proudly Serving Canberra & All Surrounding Areas
                         </motion.h2>
@@ -55,7 +55,7 @@ const Hero = () => {
                                 hidden: { opacity: 0, y: 30 },
                                 visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
                             }}
-                            className="text-4xl md:text-7xl font-extrabold text-white leading-tight mb-6 relative inline-block"
+                            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-4 sm:mb-6 relative inline-block"
                         >
                             Professional Cleaning <br />
                             Services You Can Trust
@@ -110,7 +110,7 @@ const Hero = () => {
                                 hidden: { opacity: 0, y: 20 },
                                 visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
                             }}
-                            className="text-xl text-gray-200 mb-8 leading-relaxed max-w-3xl mx-auto"
+                            className="text-base sm:text-lg md:text-xl text-gray-200 mb-6 sm:mb-8 leading-relaxed max-w-3xl mx-auto px-4 sm:px-0"
                         >
                             Over 18 years of experience delivering spotless results for homes and
                             businesses. Reliable, affordable, and eco-friendly cleaning services.
@@ -127,10 +127,10 @@ const Hero = () => {
                                 href="#contact"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
-                                className="bg-[#1a8037] hover:bg-[#146c2e] text-white px-8 py-3.5 rounded-md font-bold text-lg shadow-lg flex items-center justify-center gap-2 transition-colors"
+                                className="bg-[#1a8037] hover:bg-[#146c2e] text-white px-6 sm:px-8 py-3 sm:py-3.5 rounded-md font-bold text-base sm:text-lg shadow-lg flex items-center justify-center gap-2 transition-colors min-h-[44px]"
                             >
                                 <span>Book now</span>
-                                <ArrowRight size={20} />
+                                <ArrowRight size={18} className="sm:w-5 sm:h-5" />
                             </motion.a>
                         </motion.div>
 
@@ -157,7 +157,7 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5, duration: 0.8 }}
-                    className="mt-16 sm:mt-24 max-w-6xl mx-auto px-4"
+                    className="mt-8 sm:mt-12 md:mt-16 lg:mt-24 max-w-6xl mx-auto px-4"
                 >
                     <div className="bg-[#f5f5dc] rounded-2xl shadow-2xl overflow-hidden">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-gray-300">
@@ -188,16 +188,16 @@ const Hero = () => {
                                     <motion.div
                                         key={index}
                                         whileHover={{ y: -5 }}
-                                        className="p-8 text-center transition-all duration-300 hover:bg-white/50"
+                                        className="p-4 sm:p-6 md:p-8 text-center transition-all duration-300 hover:bg-white/50"
                                     >
                                         <div className="flex flex-col items-center gap-3">
                                             <div className="text-[#1a8037] mb-2">
-                                                <Icon size={48} strokeWidth={2} />
+                                                <Icon size={36} strokeWidth={2} className="sm:w-10 sm:h-10 md:w-12 md:h-12" />
                                             </div>
-                                            <h3 className="font-bold text-gray-900 text-sm tracking-wide">
+                                            <h3 className="font-bold text-gray-900 text-xs sm:text-sm tracking-wide">
                                                 {feature.title}
                                             </h3>
-                                            <p className="text-[#1e40af] text-sm font-medium leading-relaxed">
+                                            <p className="text-[#1e40af] text-xs sm:text-sm font-medium leading-relaxed">
                                                 {feature.desc}
                                             </p>
                                         </div>

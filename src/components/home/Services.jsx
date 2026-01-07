@@ -122,7 +122,7 @@ const Services = () => {
 
             <div className="container mx-auto px-4 relative z-10">
                 <div className="text-center max-w-3xl mx-auto mb-8">
-                    <h2 className="text-4xl md:text-5xl font-extrabold text-[#023e8a] mb-6 relative inline-block">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#023e8a] mb-6 relative inline-block">
                         Our Services
                         <motion.div
                             className="absolute -top-6 -right-8 text-yellow-400"
@@ -132,7 +132,7 @@ const Services = () => {
                             <Sparkles size={32} fill="currentColor" />
                         </motion.div>
                     </h2>
-                    <p className="text-gray-500 text-lg">
+                    <p className="text-gray-500 text-base sm:text-lg">
                         We provide a wide range of cleaning solutions for every need.
                     </p>
                 </div>
@@ -180,7 +180,7 @@ const Services = () => {
                                 >
                                     <div className="relative bg-white shadow-xl shadow-gray-200/60 rounded-xl overflow-hidden flex flex-col h-full group border border-gray-100/50">
                                         {/* Top Image Section */}
-                                        <div className="h-48 relative overflow-hidden">
+                                        <div className="h-40 sm:h-44 md:h-48 relative overflow-hidden">
                                             <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors z-10"></div>
                                             <img
                                                 src={service.image}
@@ -192,7 +192,7 @@ const Services = () => {
                                         </div>
 
                                         {/* Content Section */}
-                                        <div className={`flex-1 relative pt-12 pb-8 px-5 text-center flex flex-col items-center ${service.active ? 'bg-[#E1F5FE]/30' : 'bg-white'}`}>
+                                        <div className={`flex-1 relative pt-8 sm:pt-10 md:pt-12 pb-6 sm:pb-7 md:pb-8 px-4 sm:px-5 text-center flex flex-col items-center ${service.active ? 'bg-[#E1F5FE]/30' : 'bg-white'}`}>
 
                                             {/* Notch (SVG) */}
                                             <div className="absolute -top-[29px] left-0 w-full h-[30px] z-20 overflow-hidden">
@@ -208,20 +208,20 @@ const Services = () => {
                                                     {/* Pulsing Ring */}
                                                     <div className="absolute inset-0 rounded-full bg-primary/20 animate-ping opacity-0 group-hover:opacity-100"></div>
 
-                                                    <div className="relative w-20 h-20 rounded-full bg-white border-[3px] border-[#0289D1] flex items-center justify-center shadow-lg group-hover:shadow-primary/40 transition-shadow duration-300">
-                                                        <service.icon size={32} className="text-[#0289D1] transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300" strokeWidth={1.5} />
+                                                    <div className="relative w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 rounded-full bg-white border-[3px] border-[#0289D1] flex items-center justify-center shadow-lg group-hover:shadow-primary/40 transition-shadow duration-300">
+                                                        <service.icon size={28} className="sm:w-7 sm:h-7 md:w-8 md:h-8 text-[#0289D1] transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300" strokeWidth={1.5} />
                                                     </div>
                                                 </div>
                                             </div>
 
                                             {/* Text */}
-                                            <h4 className="text-lg font-extrabold text-[#001E6C] mb-3 group-hover:text-primary transition-colors">{service.title}</h4>
-                                            <p className="text-gray-500 text-xs leading-relaxed mb-6 max-w-xs mx-auto line-clamp-3">
+                                            <h4 className="text-base sm:text-lg font-extrabold text-[#001E6C] mb-3 group-hover:text-primary transition-colors">{service.title}</h4>
+                                            <p className="text-gray-500 text-xs sm:text-sm leading-relaxed mb-6 max-w-xs mx-auto line-clamp-3">
                                                 {service.description}
                                             </p>
 
                                             {/* Interactive Button */}
-                                            <button className="mt-auto px-6 py-2 bg-[#0289D1] hover:bg-[#0277bd] text-white text-xs font-bold rounded-full transition-all shadow-md hover:shadow-xl hover:-translate-y-1 active:scale-95 flex items-center gap-1.5">
+                                            <button className="mt-auto px-5 sm:px-6 py-2 sm:py-2.5 bg-[#0289D1] hover:bg-[#0277bd] text-white text-xs sm:text-sm font-bold rounded-full transition-all shadow-md hover:shadow-xl hover:-translate-y-1 active:scale-95 flex items-center gap-1.5 min-h-[40px]">
                                                 Read More <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                                             </button>
                                         </div>
