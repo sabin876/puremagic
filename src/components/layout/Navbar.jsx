@@ -43,16 +43,16 @@ const Navbar = () => {
     ];
 
     return (
-        <div className="w-full font-sans">
+        <div className="w-full font-sans fixed top-0 left-0 right-0 z-50">
             {/* Top Bar */}
-            <div className="bg-topbar text-center py-2 px-4 shadow-sm z-50 relative">
+            <div className="bg-topbar text-center py-2 px-4 shadow-sm">
                 <p className="text-white font-medium text-xs sm:text-sm md:text-base tracking-wide">
                     ✨ Sparkling Homes, Happy Hearts – Experience the <span className="font-bold underline">Pure Magic Clean</span> Today! ✨
                 </p>
             </div>
 
             {/* Main Navbar */}
-            <nav className="bg-white shadow-sm py-4 z-40 relative transition-all duration-300">
+            <nav className="bg-white shadow-md py-4 transition-all duration-300">
                 <div className="container mx-auto px-4 md:px-8 flex justify-between items-center">
 
                     {/* Logo Section */}

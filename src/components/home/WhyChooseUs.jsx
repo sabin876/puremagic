@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
+import cleaningWomanImg from '../../assets/cleaning woman.jpg';
 
 const steps = [
     {
@@ -52,7 +53,7 @@ const WhyChooseUs = () => {
                         {/* Image 1 (Back/Top) */}
                         <div className="absolute top-0 right-10 w-48 h-60 sm:w-56 sm:h-70 md:w-64 md:h-80 rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white z-10">
                             <img
-                                src="https://plus.unsplash.com/premium_photo-1661695562703-9d936181f0bd?q=80&w=1932&auto=format&fit=crop"
+                                src={cleaningWomanImg}
                                 alt="Cleaning Woman"
                                 className="w-full h-full object-cover"
                             />

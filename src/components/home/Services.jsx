@@ -2,8 +2,12 @@ import React from 'react';
 import Tilt from 'react-parallax-tilt';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, EffectCoverflow } from 'swiper/modules';
-import { Home, Sparkles, Building2, Droplets, Wrench, PaintBucket, ArrowRight, Star, Disc, Scissors, Sun } from 'lucide-react';
+import { Home, Sparkles, Building2, Droplets, Wrench, PaintBucket, ArrowRight, Star, Disc, Scissors, Sun, Sofa, Trash2 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import endLeaseImg from '../../assets/end laser.jpg';
+import lawnMovingImg from '../../assets/lawan moving.jpg';
+import floorScrubbingImg from '../../assets/floor scurbing.jpg';
+import pressureWashImg from '../../assets/pressure wash.jpg';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -27,13 +31,13 @@ const services = [
         icon: Sparkles,
         title: 'End of Lease',
         description: 'Comprehensive bond cleaning services to help you secure your deposit back, guaranteed.',
-        image: 'https://images.unsplash.com/photo-1581578731117-104f2a41272c?q=80&w=1887&auto=format&fit=crop'
+        image: endLeaseImg
     },
     {
         icon: Droplets,
         title: 'Pressure Wash',
         description: 'High-power pressure washing to remove grime from driveways, patios, and exterior walls.',
-        image: 'https://images.unsplash.com/photo-1601120228790-255d644d6781?q=80&w=1974&auto=format&fit=crop'
+        image: pressureWashImg
     },
     {
         icon: PaintBucket,
@@ -45,7 +49,7 @@ const services = [
         icon: Scissors,
         title: 'Lawn Mowing',
         description: 'Professional lawn care and mowing services to keep your garden looking neat and tidy.',
-        image: 'https://images.unsplash.com/photo-1599307374828-5aece3c70f07?q=80&w=1964&auto=format&fit=crop'
+        image: lawnMovingImg
     },
     {
         icon: Sun,
@@ -57,7 +61,19 @@ const services = [
         icon: Disc,
         title: 'Floor Scrubbing',
         description: 'Deep mechanical scrubbing for warehouses and large floor areas to remove heavy chemical and oil buildup.',
-        image: 'https://images.unsplash.com/photo-1584622750111-9f67bfa8c618?q=80&w=2069&auto=format&fit=crop'
+        image: floorScrubbingImg
+    },
+    {
+        icon: Sofa,
+        title: 'Carpet Cleaning',
+        description: 'Professional carpet and upholstery cleaning to remove stains, odors, and allergens for a fresh home.',
+        image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070&auto=format&fit=crop'
+    },
+    {
+        icon: Trash2,
+        title: 'Rubbish Removal',
+        description: 'Efficient waste and rubbish removal services for homes, offices, and construction sites.',
+        image: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=2070&auto=format&fit=crop'
     }
 ];
 

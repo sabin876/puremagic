@@ -7,7 +7,7 @@ import logoWatermark from '../../assets/logo_white.png';
 const Hero = () => {
     return (
         // Adjusted top margin/padding for the compact navbar height
-        <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-900 pt-24 lg:pt-28">
+        <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-900">
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
                 <img

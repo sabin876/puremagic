@@ -13,7 +13,8 @@ function App() {
     <div className="relative min-h-screen font-sans bg-gray-50">
       <Navbar />
 
-      <main>
+      {/* Add padding-top to compensate for fixed navbar */}
+      <main className="pt-[120px] sm:pt-[130px] md:pt-[140px]">
         <Hero />
         <Services />
         <WhyChooseUs />
