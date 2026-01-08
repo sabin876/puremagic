@@ -1,12 +1,10 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
-import Hero from './components/home/Hero';
-import Services from './components/home/Services';
-import WhyChooseUs from './components/home/WhyChooseUs';
-import Testimonials from './components/home/Testimonials';
-// import Contact from './components/home/Contact';
 import FloatingWhatsApp from './components/common/FloatingWhatsApp';
+import HomePage from './pages/HomePage';
+import ContactPage from './pages/ContactPage';
 
 function App() {
   return (
@@ -15,11 +13,10 @@ function App() {
 
       {/* Add padding-top to compensate for fixed navbar */}
       <main className="pt-[120px] sm:pt-[130px] md:pt-[140px]">
-        <Hero />
-        <Services />
-        <WhyChooseUs />
-        <Testimonials />
-        {/* <Contact /> */}
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
       </main>
 
       <FloatingWhatsApp />

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X, Phone, ChevronDown, Facebook, Instagram, Linkedin, Mail } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import logoImg from '../../assets/logo_final.png';
@@ -40,6 +41,7 @@ const Navbar = () => {
         },
         { name: "FAQ", href: "#" },
         { name: "Locations", href: "#" },
+        { name: "Contact", href: "/contact" },
     ];
 
     return (
@@ -57,13 +59,13 @@ const Navbar = () => {
 
                     {/* Logo Section */}
                     <div className="flex-shrink-0 h-16 md:h-20 flex items-center relative w-36 md:w-56">
-                        <a href="#" className="absolute top-1/2 -translate-y-1/2 left-0 z-50">
+                        <Link to="/" className="absolute top-1/2 -translate-y-1/2 left-0 z-50">
                             <img
                                 src={logoImg}
                                 alt="Pure Magic"
                                 className="h-12 sm:h-14 md:h-16 lg:h-[7rem] w-auto object-contain transition-all duration-300 origin-left hover:scale-105"
                             />
-                        </a>
+                        </Link>
                     </div>
 
                     {/* Right Side Info (Desktop) */}
@@ -90,13 +92,22 @@ const Navbar = () => {
                                         onMouseEnter={() => link.isDropdown && setActiveDropdown(link.name)}
                                         onMouseLeave={() => link.isDropdown && setActiveDropdown(null)}
                                     >
-                                        <a
-                                            href={link.href}
-                                            className="flex items-center gap-1 text-primary font-bold text-[15px] hover:text-primary-dark transition-colors py-2"
-                                        >
-                                            {link.name}
-                                            {link.isDropdown && <ChevronDown size={14} strokeWidth={3} className="pt-0.5" />}
-                                        </a>
+                                        {link.isDropdown ? (
+                                            <a
+                                                href={link.href}
+                                                className="flex items-center gap-1 text-primary font-bold text-[15px] hover:text-primary-dark transition-colors py-2"
+                                            >
+                                                {link.name}
+                                                <ChevronDown size={14} strokeWidth={3} className="pt-0.5" />
+                                            </a>
+                                        ) : (
+                                            <Link
+                                                to={link.href}
+                                                className="flex items-center gap-1 text-primary font-bold text-[15px] hover:text-primary-dark transition-colors py-2"
+                                            >
+                                                {link.name}
+                                            </Link>
+                                        )}
 
                                         {/* Dropdown Menu */}
                                         {link.isDropdown && (
@@ -197,9 +208,9 @@ const Navbar = () => {
                                                 )}
                                             </div>
                                         ) : (
-                                            <a href={link.href} className="block py-2 text-gray-800 font-bold text-base sm:text-lg">
+                                            <Link to={link.href} className="block py-2 text-gray-800 font-bold text-base sm:text-lg">
                                                 {link.name}
-                                            </a>
+                                            </Link>
                                         )}
                                     </div>
                                 ))}
