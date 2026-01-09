@@ -7,7 +7,7 @@ import heroVideo from '../../assets/Untitled design.mp4';
 const Hero = () => {
     return (
         // Adjusted top margin/padding for the compact navbar height
-        <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-900">
+        <section id="home" className="relative h-screen min-h-[600px] md:min-h-screen flex items-center justify-center overflow-hidden bg-gray-900">
             {/* Background Video */}
             <div className="absolute inset-0 z-0">
                 <video
@@ -15,7 +15,8 @@ const Hero = () => {
                     loop
                     muted
                     playsInline
-                    className="w-full h-full object-cover"
+                    poster={heroBg}
+                    className="absolute inset-0 w-full h-full object-cover object-center"
                 >
                     <source src={heroVideo} type="video/mp4" />
                     {/* Fallback to static image if video doesn't load */}
@@ -26,7 +27,7 @@ const Hero = () => {
                     />
                 </video>
                 {/* Darker overlay for 'light dark' effect and text readability */}
-                <div className="absolute inset-0 bg-black/50"></div>
+                <div className="absolute inset-0 bg-black/60 md:bg-black/50"></div>
             </div>
 
             <div className="container-wrapper relative z-10">
