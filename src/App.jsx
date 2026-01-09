@@ -5,6 +5,7 @@ import Footer from './components/layout/Footer';
 import FloatingWhatsApp from './components/common/FloatingWhatsApp';
 import HomePage from './pages/HomePage';
 import ContactPage from './pages/ContactPage';
+import ServicePage from './pages/ServicePage';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/services/:serviceId" element={<ServicePage />} />
         </Routes>
       </main>
 

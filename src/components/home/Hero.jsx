@@ -2,26 +2,31 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, Phone, Star, ShieldCheck, ArrowRight, ChevronDown, Sparkles, RefreshCw, Leaf, FileCheck, DollarSign } from 'lucide-react';
 import heroBg from '../../assets/hero_bg_new.png';
-import logoWatermark from '../../assets/logo_white.png';
+import heroVideo from '../../assets/Untitled design.mp4';
 
 const Hero = () => {
     return (
         // Adjusted top margin/padding for the compact navbar height
         <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-900">
-            {/* Background Image */}
+            {/* Background Video */}
             <div className="absolute inset-0 z-0">
-                <img
-                    src={heroBg}
-                    alt="Pure Magic Cleaning Service"
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
                     className="w-full h-full object-cover"
-                />
-                {/* Darker overlay for 'light drak' effect and text readability */}
+                >
+                    <source src={heroVideo} type="video/mp4" />
+                    {/* Fallback to static image if video doesn't load */}
+                    <img
+                        src={heroBg}
+                        alt="Pure Magic Cleaning Service"
+                        className="w-full h-full object-cover"
+                    />
+                </video>
+                {/* Darker overlay for 'light dark' effect and text readability */}
                 <div className="absolute inset-0 bg-black/50"></div>
-
-                {/* Logo Watermark - Backward Type */}
-                <div className="absolute top-1/2 -left-20 -translate-y-1/2 opacity-10 pointer-events-none hidden lg:block">
-                    <img src={logoWatermark} alt="" className="h-[600px] w-auto rotate-12" />
-                </div>
             </div>
 
             <div className="container-wrapper relative z-10">

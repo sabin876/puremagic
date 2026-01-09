@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Tilt from 'react-parallax-tilt';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, EffectCoverflow } from 'swiper/modules';
@@ -19,65 +20,81 @@ const services = [
         icon: Building2,
         title: 'Commercial Cleaning',
         description: 'Professional cleaning solutions for offices and commercial spaces to maintain a pristine business environment.',
-        image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop'
+        image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop',
+        slug: 'commercial-cleaning'
     },
     {
         icon: Home,
         title: 'BnB Cleaning',
         description: 'Fast and thorough turnover cleaning for Airbnb and vacation rentals to ensure 5-star guest reviews.',
-        image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=2070&auto=format&fit=crop'
+        image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=2070&auto=format&fit=crop',
+        slug: 'bnb-cleaning'
     },
     {
         icon: Sparkles,
         title: 'End of Lease',
         description: 'Comprehensive bond cleaning services to help you secure your deposit back, guaranteed.',
-        image: endLeaseImg
+        image: endLeaseImg,
+        slug: 'end-of-lease'
     },
     {
         icon: Droplets,
         title: 'Pressure Wash',
         description: 'High-power pressure washing to remove grime from driveways, patios, and exterior walls.',
-        image: pressureWashImg
+        image: pressureWashImg,
+        slug: 'pressure-wash'
     },
     {
         icon: PaintBucket,
         title: 'Strip and Seal',
         description: 'Expert floor stripping and sealing to restore the shine and protect your vinyl or hard floors.',
-        image: 'https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?q=80&w=2070&auto=format&fit=crop'
+        image: 'https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?q=80&w=2070&auto=format&fit=crop',
+        slug: 'strip-and-seal'
     },
     {
         icon: Scissors,
         title: 'Lawn Mowing',
         description: 'Professional lawn care and mowing services to keep your garden looking neat and tidy.',
-        image: lawnMovingImg
+        image: lawnMovingImg,
+        slug: 'lawn-mowing'
     },
     {
         icon: Sun,
         title: 'Window Cleaning',
         description: 'Streak-free window cleaning for crystal clear views, suitable for both residential and commercial.',
-        image: 'https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?q=80&w=2076&auto=format&fit=crop'
+        image: 'https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?q=80&w=2076&auto=format&fit=crop',
+        slug: 'window-cleaning'
     },
     {
         icon: Disc,
         title: 'Floor Scrubbing',
         description: 'Deep mechanical scrubbing for warehouses and large floor areas to remove heavy chemical and oil buildup.',
-        image: floorScrubbingImg
+        image: floorScrubbingImg,
+        slug: 'floor-scrubbing'
     },
     {
         icon: Sofa,
         title: 'Carpet Cleaning',
         description: 'Professional carpet and upholstery cleaning to remove stains, odors, and allergens for a fresh home.',
-        image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070&auto=format&fit=crop'
+        image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070&auto=format&fit=crop',
+        slug: 'carpet-cleaning'
     },
     {
         icon: Trash2,
         title: 'Rubbish Removal',
         description: 'Efficient waste and rubbish removal services for homes, offices, and construction sites.',
-        image: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=2070&auto=format&fit=crop'
+        image: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=2070&auto=format&fit=crop',
+        slug: 'rubbish-removal'
     }
 ];
 
 const Services = () => {
+    const navigate = useNavigate();
+
+    const handleReadMore = (slug) => {
+        navigate(`/services/${slug}`);
+    };
+
     return (
         <section id="services" className="py-12 bg-black/10 relative overflow-hidden font-sans">
 
@@ -237,7 +254,9 @@ const Services = () => {
                                             </p>
 
                                             {/* Interactive Button */}
-                                            <button className="mt-auto px-5 sm:px-6 py-2 sm:py-2.5 bg-[#0289D1] hover:bg-[#0277bd] text-white text-xs sm:text-sm font-bold rounded-full transition-all shadow-md hover:shadow-xl hover:-translate-y-1 active:scale-95 flex items-center gap-1.5 min-h-[40px]">
+                                            <button
+                                                onClick={() => handleReadMore(service.slug)}
+                                                className="mt-auto px-5 sm:px-6 py-2 sm:py-2.5 bg-[#0289D1] hover:bg-[#0277bd] text-white text-xs sm:text-sm font-bold rounded-full transition-all shadow-md hover:shadow-xl hover:-translate-y-1 active:scale-95 flex items-center gap-1.5 min-h-[40px]">
                                                 Read More <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                                             </button>
                                         </div>

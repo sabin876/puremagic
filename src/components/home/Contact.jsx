@@ -10,33 +10,45 @@ const Contact = () => {
             <div className="absolute top-0 right-0 w-1/3 h-full bg-secondary/5 skew-x-12 translate-x-1/2 pointer-events-none" />
 
             <div className="container-wrapper relative z-10">
-                <div className="text-center mb-12 max-w-2xl mx-auto">
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-primary font-bold tracking-wide uppercase text-sm mb-3"
-                    >
-                        GET IN TOUCH
-                    </motion.h2>
-                    <motion.h3
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1 }}
-                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4"
-                    >
-                        We're Here for You
-                    </motion.h3>
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.2 }}
-                        className="text-gray-600 text-base sm:text-lg"
-                    >
-                        Whether you need a consultation or have a question about your treatment, reach out to us.
-                    </motion.p>
+                {/* Header Section with Background */}
+                <div className="relative mb-16 -mx-4 sm:-mx-6 md:-mx-8 lg:-mx-12 px-4 sm:px-6 md:px-8 lg:px-12 py-16 sm:py-20 md:py-24 overflow-hidden">
+                    {/* Gradient Background */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-blue-100/50 to-secondary/20" />
+
+                    {/* Decorative Elements */}
+                    <div className="absolute top-10 left-10 w-20 h-20 bg-primary/10 rounded-full blur-2xl animate-pulse" />
+                    <div className="absolute bottom-10 right-10 w-32 h-32 bg-secondary/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+                    <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-blue-300/20 rounded-full blur-xl" />
+
+                    {/* Content */}
+                    <div className="text-center max-w-2xl mx-auto relative z-10">
+                        <motion.h2
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="text-primary font-bold tracking-wide uppercase text-sm mb-3"
+                        >
+                            GET IN TOUCH
+                        </motion.h2>
+                        <motion.h3
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.1 }}
+                            className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4"
+                        >
+                            We're Here for You
+                        </motion.h3>
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.2 }}
+                            className="text-gray-600 text-base sm:text-lg"
+                        >
+                            Whether you need a consultation or have a question about your treatment, reach out to us.
+                        </motion.p>
+                    </div>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start mb-16">
