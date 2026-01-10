@@ -7,7 +7,7 @@ import heroVideo from '../../assets/Untitled design.mp4';
 const Hero = () => {
     return (
         // Adjusted top margin/padding for the compact navbar height
-        <section id="home" className="relative h-screen min-h-[600px] md:min-h-screen flex items-center justify-center overflow-hidden bg-gray-900">
+        <section id="home" className="relative h-screen min-h-[600px] md:min-h-screen flex items-center justify-center overflow-hidden bg-gray-900 pt-20 sm:pt-24 md:pt-28">
             {/* Background Video */}
             <div className="absolute inset-0 z-0">
                 <video
