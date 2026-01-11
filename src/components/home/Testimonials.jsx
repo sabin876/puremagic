@@ -90,27 +90,27 @@ const Testimonials = () => {
                     <div className="flex items-center justify-center relative w-full max-w-3xl mx-auto h-full">
                         {getVisibleAvatars().map((item) => {
                             const isCenter = item.offset === 0;
-                            // Calculate curve position: y offset based on distance from center
-                            // Center is highest (y=0), sides drop down
                             const yOffset = Math.abs(item.offset) * 20;
                             const scale = isCenter ? 1.3 : 1 - Math.abs(item.offset) * 0.15;
                             const opacity = isCenter ? 1 : 0.6 - Math.abs(item.offset) * 0.1;
 
                             return (
                                 <motion.div
-                                    key={`${item.id}-${item.offset}`} // Unique key for motion diffing
+                                    key={`${item.id}-${item.offset}`}
                                     layout
                                     initial={false}
+                                    className={`absolute cursor-pointer transition-all duration-300 rounded-full p-1 ${isCenter ? 'border-4 border-primary shadow-xl' : 'border border-transparent blur-[0.5px]'}`}
                                     animate={{
                                         y: yOffset,
                                         scale: scale,
                                         opacity: opacity,
                                         zIndex: isCenter ? 10 : 5 - Math.abs(item.offset),
-                                        x: item.offset * 60 // Horizontal spacing
+                                        x: (typeof window !== 'undefined' && window.innerWidth < 768)
+                                            ? item.offset * 40
+                                            : item.offset * 60
                                     }}
                                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                                     onClick={() => handleDotClick(item.originalIndex)}
-                                    className={`absolute cursor-pointer transition-all duration-300 rounded-full p-1 ${isCenter ? 'border-4 border-primary shadow-xl' : 'border border-transparent blur-[0.5px]'}`}
                                 >
                                     <div className="w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden bg-gray-200">
                                         <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
@@ -126,16 +126,16 @@ const Testimonials = () => {
                     {/* Navigation Buttons */}
                     <button
                         onClick={prevTestimonial}
-                        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 z-20 w-10 h-10 md:w-12 md:h-12 bg-primary text-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary-dark transition-colors focus:outline-none"
+                        className="absolute left-2 md:-translate-x-12 top-1/2 -translate-y-1/2 z-20 w-8 h-8 md:w-12 md:h-12 bg-primary text-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary-dark transition-colors focus:outline-none"
                     >
-                        <ChevronLeft size={24} />
+                        <ChevronLeft size={20} className="md:w-6 md:h-6" />
                     </button>
 
                     <button
                         onClick={nextTestimonial}
-                        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 z-20 w-10 h-10 md:w-12 md:h-12 bg-primary text-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary-dark transition-colors focus:outline-none"
+                        className="absolute right-2 md:translate-x-12 top-1/2 -translate-y-1/2 z-20 w-8 h-8 md:w-12 md:h-12 bg-primary text-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary-dark transition-colors focus:outline-none"
                     >
-                        <ChevronRight size={24} />
+                        <ChevronRight size={20} className="md:w-6 md:h-6" />
                     </button>
 
                     <AnimatePresence mode="wait">
@@ -145,13 +145,13 @@ const Testimonials = () => {
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             exit={{ opacity: 0, y: -20, scale: 0.95 }}
                             transition={{ duration: 0.3 }}
-                            className="bg-white rounded-[2rem] shadow-soft p-8 md:p-12 text-center"
+                            className="bg-white rounded-[2rem] shadow-soft p-6 md:p-12 text-center"
                         >
                             <div className="flex flex-col items-center">
-                                <h3 className="text-primary font-bold text-2xl md:text-3xl mb-1">{testimonials[currentIndex].name}</h3>
-                                <p className="text-gray-500 font-medium text-sm mb-6">{testimonials[currentIndex].role}</p>
+                                <h3 className="text-primary font-bold text-xl md:text-3xl mb-1">{testimonials[currentIndex].name}</h3>
+                                <p className="text-gray-500 font-medium text-xs md:text-sm mb-4 md:mb-6">{testimonials[currentIndex].role}</p>
 
-                                <p className="text-gray-600 leading-8 text-base md:text-lg max-w-2xl mx-auto">
+                                <p className="text-gray-600 leading-relaxed md:leading-8 text-sm md:text-lg max-w-2xl mx-auto">
                                     {testimonials[currentIndex].content}
                                 </p>
                             </div>

@@ -1,14 +1,52 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, Phone, Star, ShieldCheck, ArrowRight, ChevronDown, Sparkles, RefreshCw, Leaf, FileCheck, DollarSign } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 import heroBg from '../../assets/hero_bg_new.png';
 import heroVideo from '../../assets/Untitled design.mp4';
 
 const Hero = () => {
+    const cleanerCards = [
+        {
+            id: 1,
+            image: "https://images.unsplash.com/photo-1581578731522-632ee0434407?q=80&w=2070&auto=format&fit=crop",
+            alt: "Cleaning Professional 1",
+            delay: 0.1,
+            height: "h-[160px] md:h-[200px]"
+        },
+        {
+            id: 2,
+            image: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?q=80&w=2074&auto=format&fit=crop",
+            alt: "Cleaning Professional 2",
+            delay: 0.3,
+            height: "h-[190px] md:h-[240px]"
+        },
+        {
+            id: 3,
+            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=2070&auto=format&fit=crop",
+            alt: "Cleaning Professional 3",
+            delay: 0.5,
+            height: "h-[220px] md:h-[280px]",
+            isCentral: true
+        },
+        {
+            id: 4,
+            image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop",
+            alt: "Cleaning Professional 4",
+            delay: 0.3,
+            height: "h-[190px] md:h-[240px]"
+        },
+        {
+            id: 5,
+            image: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=2070&auto=format&fit=crop",
+            alt: "Cleaning Professional 5",
+            delay: 0.1,
+            height: "h-[160px] md:h-[200px]"
+        }
+    ];
+
     return (
-        // Adjusted top margin/padding for the compact navbar height
-        <section id="home" className="relative h-screen min-h-[600px] md:min-h-screen flex items-center justify-center overflow-hidden bg-gray-900 pt-20 sm:pt-24 md:pt-28">
-            {/* Background Video */}
+        <section id="home" className="relative min-h-[700px] md:min-h-screen flex flex-col justify-start overflow-hidden bg-zinc-950 pt-10 sm:pt-14 md:pt-20">
+            {/* Full Video Background Section */}
             <div className="absolute inset-0 z-0">
                 <video
                     autoPlay
@@ -16,203 +54,88 @@ const Hero = () => {
                     muted
                     playsInline
                     poster={heroBg}
-                    className="absolute inset-0 w-full h-full object-cover object-center"
+                    className="w-full h-full object-cover"
                 >
                     <source src={heroVideo} type="video/mp4" />
-                    {/* Fallback to static image if video doesn't load */}
-                    <img
-                        src={heroBg}
-                        alt="Pure Magic Cleaning Service"
-                        className="w-full h-full object-cover"
-                    />
                 </video>
-                {/* Darker overlay for 'light dark' effect and text readability */}
-                <div className="absolute inset-0 bg-black/60 md:bg-black/50"></div>
+                <div className="absolute inset-0 bg-black/50 md:bg-black/40"></div>
             </div>
 
-            <div className="container-wrapper relative z-10">
-                <div className="max-w-4xl mx-auto text-center">
-                    <motion.div
-                        initial="hidden"
-                        animate="visible"
-                        variants={{
-                            hidden: { opacity: 0 },
-                            visible: {
-                                opacity: 1,
-                                transition: {
-                                    staggerChildren: 0.2
-                                }
-                            }
-                        }}
-                        className="flex flex-col items-center"
-                    >
-                        <motion.h2
-                            variants={{
-                                hidden: { opacity: 0, y: 20 },
-                                visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
-                            }}
-                            className="text-white font-bold tracking-wider uppercase mb-3 sm:mb-4 text-xs sm:text-sm md:text-base"
-                        >
-                            Proudly Serving Canberra & All Surrounding Areas
-                        </motion.h2>
-
-                        <motion.h1
-                            variants={{
-                                hidden: { opacity: 0, y: 30 },
-                                visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
-                            }}
-                            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-4 sm:mb-6 relative inline-block"
-                        >
-                            Professional Cleaning <br />
-                            Services You Can Trust
-
-                            {/* Cleaning Sparkle 1 - Moving Star */}
-                            <motion.div
-                                animate={{
-                                    x: [-50, 450],
-                                    y: [20, -40],
-                                    rotate: [0, 180],
-                                    opacity: [0, 1, 0]
-                                }}
-                                transition={{
-                                    duration: 3,
-                                    repeat: Infinity,
-                                    ease: "easeInOut",
-                                    repeatDelay: 1
-                                }}
-                                className="absolute top-0 left-0 pointer-events-none text-yellow-300 hidden md:block"
-                            >
-                                <Sparkles size={52} />
-                            </motion.div>
-
-                            {/* Cleaning Sparkle 2 - Twinkling Star */}
-                            <motion.div
-                                animate={{
-                                    scale: [0.8, 1.2, 0.8],
-                                    opacity: [0.4, 1, 0.4],
-                                    rotate: [0, 90, 0]
-                                }}
-                                transition={{ duration: 2, repeat: Infinity }}
-                                className="absolute -top-6 -right-8 text-[#4ade80] pointer-events-none hidden md:block" // Greenish for eco-friendly hint
-                            >
-                                <Star size={44} fill="currentColor" />
-                            </motion.div>
-
-                            {/* Cleaning Sparkle 3 - Floating */}
-                            <motion.div
-                                animate={{
-                                    y: [0, -15, 0],
-                                    opacity: [0.3, 0.8, 0.3]
-                                }}
-                                transition={{ duration: 4, repeat: Infinity, delay: 0.5 }}
-                                className="absolute bottom-4 -left-10 text-blue-300 pointer-events-none hidden md:block"
-                            >
-                                <Sparkles size={48} />
-                            </motion.div>
-                        </motion.h1>
-
-                        <motion.p
-                            variants={{
-                                hidden: { opacity: 0, y: 20 },
-                                visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
-                            }}
-                            className="text-base sm:text-lg md:text-xl text-gray-200 mb-6 sm:mb-8 leading-relaxed max-w-3xl mx-auto px-4 sm:px-0"
-                        >
-                            Over 18 years of experience delivering spotless results for homes and
-                            businesses. Reliable, affordable, and eco-friendly cleaning services.
-                        </motion.p>
-
-                        <motion.div
-                            variants={{
-                                hidden: { opacity: 0, scale: 0.9 },
-                                visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } }
-                            }}
-                            className="flex flex-col sm:flex-row gap-4 justify-center"
-                        >
-                            <motion.a
-                                href="#contact"
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                className="bg-[#1a8037] hover:bg-[#146c2e] text-white px-6 sm:px-8 py-3 sm:py-3.5 rounded-md font-bold text-base sm:text-lg shadow-lg flex items-center justify-center gap-2 transition-colors min-h-[44px]"
-                            >
-                                <span>Book now</span>
-                                <ArrowRight size={18} className="sm:w-5 sm:h-5" />
-                            </motion.a>
-                        </motion.div>
-
-                        {/* Scroll Down Indicator */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 0 }}
-                            animate={{ opacity: 1, y: [0, 10, 0] }}
-                            transition={{
-                                delay: 2,
-                                duration: 2,
-                                repeat: Infinity,
-                                repeatType: "loop"
-                            }}
-                            className="absolute bottom-[-130px] left-1/2 -translate-x-1/2 text-white/80 hidden lg:flex flex-col items-center gap-1 z-20 pointer-events-none"
-                        >
-                            <span className="text-xs uppercase tracking-widest font-medium">Scroll Down</span>
-                            <ChevronDown size={20} />
-                        </motion.div>
-                    </motion.div>
-                </div>
-
-                {/* Feature Bar - Bottom Overlay */}
+            {/* Main Content */}
+            <div className="container-wrapper relative z-10 pt-2 md:pt-8 lg:pt-10 text-center">
                 <motion.div
-                    initial={{ opacity: 0, y: 50 }}
+                    initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5, duration: 0.8 }}
-                    className="mt-8 sm:mt-12 md:mt-16 lg:mt-24 max-w-6xl mx-auto px-4"
+                    transition={{ duration: 0.8 }}
+                    className="max-w-5xl mx-auto px-6"
                 >
-                    <div className="bg-[#f5f5dc] rounded-2xl shadow-2xl overflow-hidden">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-gray-300">
-                            {[
-                                {
-                                    icon: RefreshCw,
-                                    title: "ROUTINE CLEANING",
-                                    desc: "Weekly or fortnightly services."
-                                },
-                                {
-                                    icon: Leaf,
-                                    title: "NO HARSH CHEMICALS",
-                                    desc: "We only use eco-friendly products."
-                                },
-                                {
-                                    icon: FileCheck,
-                                    title: "REGISTERED PROVIDER",
-                                    desc: "Delivering support to NDIS participants."
-                                },
-                                {
-                                    icon: DollarSign,
-                                    title: "DISCOUNTS AVAILABLE",
-                                    desc: "Special pricing for pensioners."
-                                }
-                            ].map((feature, index) => {
-                                const Icon = feature.icon;
-                                return (
-                                    <motion.div
-                                        key={index}
-                                        whileHover={{ y: -5 }}
-                                        className="p-4 sm:p-6 md:p-8 text-center transition-all duration-300 hover:bg-white/50"
-                                    >
-                                        <div className="flex flex-col items-center gap-3">
-                                            <div className="text-[#1a8037] mb-2">
-                                                <Icon size={36} strokeWidth={2} className="sm:w-10 sm:h-10 md:w-12 md:h-12" />
-                                            </div>
-                                            <h3 className="font-bold text-gray-900 text-xs sm:text-sm tracking-wide">
-                                                {feature.title}
-                                            </h3>
-                                            <p className="text-[#1e40af] text-xs sm:text-sm font-medium leading-relaxed">
-                                                {feature.desc}
-                                            </p>
-                                        </div>
-                                    </motion.div>
-                                );
-                            })}
-                        </div>
+                    <h2 className="text-white font-bold tracking-[0.2em] uppercase mb-4 text-[10px] sm:text-sm md:text-base opacity-80">
+                        Proudly Serving Canberra & All Surrounding Areas
+                    </h2>
+                    <h1 className="text-[2.2rem] sm:text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] mb-6 sm:mb-8 tracking-tight">
+                        Professional Cleaning <br className="hidden sm:block" />
+                        <span className="text-white">Services You Can Trust</span>
+                    </h1>
+                    <p className="text-sm sm:text-lg md:text-xl text-gray-100 mb-10 sm:mb-12 leading-relaxed max-w-sm sm:max-w-2xl mx-auto opacity-90 font-medium">
+                        Over 18 years of experience delivering spotless results.
+                        Reliable, affordable, and eco-friendly cleaning services.
+                    </p>
+                    <div className="flex justify-center">
+                        <motion.div
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                        >
+                            <Link
+                                to="/contact"
+                                className="relative bg-[#1a8037] hover:bg-[#146c2e] text-white px-8 sm:px-10 py-3.5 sm:py-4 rounded-full font-bold text-base sm:text-lg shadow-xl flex items-center gap-2 transition-all group overflow-hidden border-none"
+                            >
+                                {/* Animated Light Border Effect */}
+                                <motion.div
+                                    className="absolute inset-0 rounded-full pb-[2px]"
+                                    style={{
+                                        background: 'conic-gradient(from 0deg, transparent, transparent, #22c55e, transparent, transparent)',
+                                        padding: '2px',
+                                        mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                                        WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                                        maskComposite: 'exclude',
+                                        WebkitMaskComposite: 'xor',
+                                    }}
+                                    animate={{ rotate: 360 }}
+                                    transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+                                />
+
+                                {/* Inner Shine Effect */}
+                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-shimmer" />
+
+                                <span className="relative z-10">Book Now</span>
+                                <ArrowRight size={20} className="relative z-10" />
+                            </Link>
+                        </motion.div>
                     </div>
                 </motion.div>
+            </div>
+
+            {/* Arched Professional Cards Section - Flat Background */}
+            <div className="absolute bottom-0 left-0 w-full z-20 pb-6 md:pb-10 flex justify-center items-end gap-1.5 md:gap-4 lg:gap-6 px-4">
+                {cleanerCards.map((card) => (
+                    <motion.div
+                        key={card.id}
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: card.delay, duration: 0.8, ease: "easeOut" }}
+                        className={`${card.height} w-[18%] md:w-[160px] lg:w-[190px] min-w-[50px] rounded-[1.25rem] md:rounded-[2rem] border-[3px] md:border-[6px] lg:border-[8px] border-white/90 shadow-2xl overflow-hidden relative group`}
+                        style={{
+                            zIndex: card.isCentral ? 30 : 20,
+                            marginBottom: card.isCentral ? '0' : '15px'
+                        }}
+                    >
+                        <img
+                            src={card.image}
+                            alt={card.alt}
+                            className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                        />
+                    </motion.div>
+                ))}
             </div>
         </section>
     );

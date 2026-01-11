@@ -8,8 +8,6 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState(null);
 
-
-
     const mainLinks = [
         {
             name: "Cleaning Services",
@@ -41,10 +39,10 @@ const Navbar = () => {
 
     return (
         <div className="w-full font-sans fixed top-0 left-0 right-0 z-50">
-            <div className="bg-topbar py-1.5 sm:py-2 px-3 sm:px-4 shadow-sm">
+            <div className="bg-topbar py-1.5 sm:py-2 px-4 shadow-sm min-h-[32px] flex items-center">
                 <div className="container mx-auto flex justify-between items-center relative">
                     {/* Centered Promotional Message */}
-                    <p className="text-white font-medium text-[10px] sm:text-xs md:text-sm tracking-wide flex-grow text-center pl-0 sm:pl-20">
+                    <p className="text-white font-medium text-[10px] sm:text-xs md:text-sm tracking-wide flex-grow text-center px-2 sm:pl-20">
                         ✨ Sparkling Homes, Happy Hearts – Experience the <span className="font-bold underline">Pure Magic Clean</span> Today! ✨
                     </p>
 
@@ -67,30 +65,24 @@ const Navbar = () => {
             </div>
 
             {/* Main Navbar */}
-            <nav className="bg-white shadow-md py-1 sm:py-1.5 md:py-2 transition-all duration-300">
-                <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 flex justify-between items-center">
+            <nav className="bg-white shadow-md py-4 sm:py-5 md:py-6 lg:py-2 transition-all duration-300">
+                <div className="container mx-auto px-6 sm:px-8 md:px-10 lg:px-8 flex justify-between items-center">
 
                     {/* Logo Section */}
-                    <div className="flex-shrink-0 h-10 sm:h-12 md:h-14 lg:h-16 flex items-center relative w-24 sm:w-28 md:w-32 lg:w-40">
+                    <div className="flex-shrink-0 h-12 sm:h-16 md:h-20 lg:h-16 flex items-center relative w-28 sm:w-40 md:w-48 lg:w-40">
                         <Link to="/" className="absolute top-1/2 -translate-y-1/2 left-0 z-50">
                             <img
                                 src={logoImg}
                                 alt="Pure Magic"
-                                className="h-10 sm:h-12 md:h-14 lg:h-16 xl:h-20 w-auto object-contain transition-all duration-300 origin-left hover:scale-105"
+                                className="h-12 sm:h-16 md:h-20 lg:h-16 xl:h-20 w-auto object-contain transition-all duration-300 origin-left hover:scale-105"
                             />
                         </Link>
                     </div>
 
                     {/* Right Side Info (Desktop) */}
                     <div className="hidden lg:flex flex-col items-end w-full ml-4 xl:ml-6">
-
-                        {/* Top Row: Utility Links */}
-
-
-                        {/* Bottom Row: Main Navigation + CTA */}
+                        {/* Navigation Row */}
                         <div className="flex items-center gap-4 xl:gap-6 mt-1.5">
-
-                            {/* Navigation Links */}
                             <div className="flex items-center gap-4 xl:gap-5">
                                 {mainLinks.map((link, idx) => (
                                     <div
@@ -100,13 +92,10 @@ const Navbar = () => {
                                         onMouseLeave={() => link.isDropdown && setActiveDropdown(null)}
                                     >
                                         {link.isDropdown ? (
-                                            <a
-                                                href={link.href}
-                                                className="flex items-center gap-0.5 text-primary font-bold text-sm xl:text-base hover:text-primary-dark transition-colors py-1.5"
-                                            >
+                                            <button className="flex items-center gap-0.5 text-primary font-bold text-sm xl:text-base hover:text-primary-dark transition-colors py-1.5">
                                                 {link.name}
                                                 <ChevronDown size={14} strokeWidth={3} className="pt-0.5" />
-                                            </a>
+                                            </button>
                                         ) : (
                                             <Link
                                                 to={link.href}
@@ -129,13 +118,14 @@ const Navbar = () => {
                                                     >
                                                         {link.items.map((item, i) => (
                                                             typeof item === 'string' ? (
-                                                                <a
+                                                                <Link
                                                                     key={i}
-                                                                    href="#"
+                                                                    to={item === "About Us" ? "/about" : "#"}
                                                                     className="block px-5 py-2.5 text-sm text-gray-600 hover:bg-secondary hover:text-primary font-medium transition-colors"
+                                                                    onClick={() => setActiveDropdown(null)}
                                                                 >
                                                                     {item}
-                                                                </a>
+                                                                </Link>
                                                             ) : (
                                                                 <Link
                                                                     key={i}
@@ -156,27 +146,53 @@ const Navbar = () => {
                             </div>
 
                             {/* Phone Number */}
-                            <a href="tel:6177428080" className="flex items-center gap-1.5 text-primary font-medium text-base xl:text-lg hover:text-primary-dark transition-colors">
-                                <Phone size={18} fill="currentColor" className="text-primary" />
+                            <motion.a
+                                href="tel:6177428080"
+                                animate={{ scale: [1, 1.03, 1] }}
+                                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                                className="flex items-center gap-1.5 text-primary font-bold text-base xl:text-lg hover:text-primary-dark transition-colors group"
+                            >
+                                <motion.div
+                                    whileHover={{ rotate: [0, -10, 10, -10, 0] }}
+                                    transition={{ duration: 0.5 }}
+                                >
+                                    <Phone size={18} fill="currentColor" className="text-primary" />
+                                </motion.div>
                                 <span>(617) 742-8080</span>
-                            </a>
+                            </motion.a>
 
                             {/* CTA Button */}
-                            <motion.a
-                                href="#"
+                            <motion.div
                                 animate={{ scale: [1, 1.05, 1] }}
                                 transition={{
                                     duration: 2,
                                     repeat: Infinity,
                                     ease: "easeInOut"
                                 }}
-                                whileHover={{ scale: 1.1, backgroundColor: "#1f7d6d" }}
+                                whileHover={{ scale: 1.1 }}
                                 whileTap={{ scale: 0.95 }}
-                                className="bg-maid-green text-white px-4 xl:px-6 py-2 xl:py-2.5 rounded-md font-bold text-sm shadow-md transition-all"
                             >
-                                Book now
-                            </motion.a>
-
+                                <Link
+                                    to="/contact"
+                                    className="relative block bg-maid-green text-white px-4 xl:px-6 py-2 xl:py-2.5 rounded-md font-bold text-sm shadow-md transition-all group overflow-hidden border-none"
+                                >
+                                    <motion.div
+                                        className="absolute inset-0 rounded-md"
+                                        style={{
+                                            background: 'conic-gradient(from 0deg, transparent, transparent, #22c55e, transparent, transparent)',
+                                            padding: '2px',
+                                            mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                                            WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                                            maskComposite: 'exclude',
+                                            WebkitMaskComposite: 'xor',
+                                        }}
+                                        animate={{ rotate: 360 }}
+                                        transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-shimmer" />
+                                    <span className="relative z-10">Book now</span>
+                                </Link>
+                            </motion.div>
                         </div>
                     </div>
 
@@ -200,10 +216,6 @@ const Navbar = () => {
                         className="lg:hidden bg-white border-t border-gray-100 shadow-xl overflow-hidden"
                     >
                         <div className="flex flex-col p-3 sm:p-4 space-y-3 sm:space-y-4">
-                            {/* Mobile Utility Links */}
-
-
-                            {/* Mobile Main Links */}
                             <div className="space-y-1.5 sm:space-y-2">
                                 {mainLinks.map((link, idx) => (
                                     <div key={idx} className="border-b border-gray-50 last:border-none pb-1.5 sm:pb-2">
@@ -223,7 +235,14 @@ const Navbar = () => {
                                                     <div className="pl-3 sm:pl-4 pb-2 space-y-1.5 sm:space-y-2 text-gray-600">
                                                         {link.items.map((item, i) => (
                                                             typeof item === 'string' ? (
-                                                                <a key={i} href="#" className="block py-1 text-xs sm:text-sm">{item}</a>
+                                                                <Link
+                                                                    key={i}
+                                                                    to={item === "About Us" ? "/about" : "#"}
+                                                                    className="block py-1 text-xs sm:text-sm"
+                                                                    onClick={() => { setActiveDropdown(null); setIsOpen(false); }}
+                                                                >
+                                                                    {item}
+                                                                </Link>
                                                             ) : (
                                                                 <Link
                                                                     key={i}
@@ -239,7 +258,11 @@ const Navbar = () => {
                                                 )}
                                             </div>
                                         ) : (
-                                            <Link to={link.href} className="block py-2 text-gray-800 font-bold text-sm sm:text-base">
+                                            <Link
+                                                to={link.href}
+                                                className="block py-2 text-gray-800 font-bold text-sm sm:text-base"
+                                                onClick={() => setIsOpen(false)}
+                                            >
                                                 {link.name}
                                             </Link>
                                         )}
@@ -247,13 +270,16 @@ const Navbar = () => {
                                 ))}
                             </div>
 
-                            {/* Mobile CTA */}
                             <div className="pt-3 sm:pt-4 flex flex-col gap-3 sm:gap-4">
-                                <a href="tel:6177428080" className="flex items-center justify-center gap-2 text-primary font-bold text-base sm:text-lg">
-                                    <Phone size={20} className="sm:w-5 sm:h-5" /> (617) 742-8080
-                                </a>
                                 <motion.a
-                                    href="#"
+                                    href="tel:6177428080"
+                                    animate={{ scale: [1, 1.03, 1] }}
+                                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                                    className="flex items-center justify-center gap-2 text-primary font-bold text-base sm:text-lg"
+                                >
+                                    <Phone size={20} className="sm:w-5 sm:h-5" /> (617) 742-8080
+                                </motion.a>
+                                <motion.div
                                     animate={{ scale: [1, 1.02, 1] }}
                                     transition={{
                                         duration: 2,
@@ -261,10 +287,29 @@ const Navbar = () => {
                                         ease: "easeInOut"
                                     }}
                                     whileTap={{ scale: 0.98 }}
-                                    className="block w-full text-center bg-maid-green text-white py-2.5 sm:py-3 rounded-md font-bold text-sm sm:text-base shadow-md min-h-[44px]"
                                 >
-                                    Book now
-                                </motion.a>
+                                    <Link
+                                        to="/contact"
+                                        onClick={() => setIsOpen(false)}
+                                        className="relative block w-full text-center bg-maid-green text-white py-2.5 sm:py-3 rounded-md font-bold text-sm sm:text-base shadow-md min-h-[44px] group overflow-hidden border-none"
+                                    >
+                                        <motion.div
+                                            className="absolute inset-0 rounded-md"
+                                            style={{
+                                                background: 'conic-gradient(from 0deg, transparent, transparent, #22c55e, transparent, transparent)',
+                                                padding: '2px',
+                                                mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                                                WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                                                maskComposite: 'exclude',
+                                                WebkitMaskComposite: 'xor',
+                                            }}
+                                            animate={{ rotate: 360 }}
+                                            transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-shimmer" />
+                                        <span className="relative z-10">Book now</span>
+                                    </Link>
+                                </motion.div>
                             </div>
                         </div>
                     </motion.div>

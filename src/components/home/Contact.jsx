@@ -11,7 +11,7 @@ const Contact = () => {
 
             <div className="container-wrapper relative z-10">
                 {/* Header Section with Background */}
-                <div className="relative mb-16 -mx-4 sm:-mx-6 md:-mx-8 lg:-mx-12 px-4 sm:px-6 md:px-8 lg:px-12 py-16 sm:py-20 md:py-24 overflow-hidden">
+                <div className="relative mb-8 md:mb-16 -mx-4 sm:-mx-6 md:-mx-8 lg:-mx-12 px-4 sm:px-6 md:px-8 lg:px-12 py-10 sm:py-20 md:py-24 overflow-hidden">
                     {/* Gradient Background */}
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-blue-100/50 to-secondary/20" />
 
@@ -46,7 +46,7 @@ const Contact = () => {
                             transition={{ delay: 0.2 }}
                             className="text-gray-600 text-base sm:text-lg"
                         >
-                            Whether you need a consultation or have a question about your treatment, reach out to us.
+                            Whether you need a quote or have a question about our cleaning services, reach out to us.
                         </motion.p>
                     </div>
                 </div>
@@ -67,8 +67,8 @@ const Contact = () => {
                                 </div>
                                 <div>
                                     <h4 className="font-bold text-gray-900 text-lg mb-1">Phone</h4>
-                                    <p className="text-primary font-semibold text-base">+971 55 105 3445</p>
-                                    <p className="text-sm text-gray-500 mt-0.5">Mon-Sat 9am to 6pm</p>
+                                    <p className="text-primary font-semibold text-base">(617) 742-8080</p>
+                                    <p className="text-sm text-gray-500 mt-0.5">Available 24/7 for you</p>
                                 </div>
                             </div>
                         </Tilt>
@@ -81,7 +81,7 @@ const Contact = () => {
                                 </div>
                                 <div>
                                     <h4 className="font-bold text-gray-900 text-lg mb-1">Email</h4>
-                                    <p className="text-primary font-semibold text-base">Kneeshoulder8@gmail.com</p>
+                                    <p className="text-primary font-semibold text-base">info@puremagic.com.au</p>
                                     <p className="text-sm text-gray-500 mt-0.5">Online support available</p>
                                 </div>
                             </div>
@@ -95,8 +95,8 @@ const Contact = () => {
                                 </div>
                                 <div>
                                     <h4 className="font-bold text-gray-900 text-lg mb-1">Location</h4>
-                                    <p className="text-gray-700 font-medium text-base">Canadian Specialist Hospital</p>
-                                    <p className="text-sm text-gray-500 mt-0.5">Dubai, United Arab Emirates</p>
+                                    <p className="text-gray-700 font-medium text-base">Serving all of Canberra</p>
+                                    <p className="text-sm text-gray-500 mt-0.5">ACT, Australia</p>
                                 </div>
                             </div>
                         </Tilt>
@@ -129,7 +129,7 @@ const Contact = () => {
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="bg-white p-8 md:p-10 rounded-3xl border border-gray-100 shadow-xl relative overflow-hidden"
+                        className="bg-white p-6 md:p-10 rounded-3xl border border-gray-100 shadow-xl relative overflow-hidden"
                     >
                         <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full pointer-events-none" />
 
@@ -154,13 +154,34 @@ const Contact = () => {
                             </div>
                         </div>
 
-                        <div className="mb-5">
-                            <label className="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
-                            <input
-                                type="tel"
-                                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-gray-50 focus:bg-white"
-                                placeholder="+971..."
-                            />
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
+                            <div>
+                                <label className="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
+                                <input
+                                    type="tel"
+                                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-gray-50 focus:bg-white"
+                                    placeholder="(617) 742-8080"
+                                />
+                            </div>
+                            <div>
+                                <label className="block text-sm font-semibold text-gray-700 mb-2">Service Type</label>
+                                <select
+                                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-gray-50 focus:bg-white appearance-none cursor-pointer"
+                                    defaultValue=""
+                                >
+                                    <option value="" disabled>Select a service</option>
+                                    <option value="commercial-cleaning">Commercial Cleaning</option>
+                                    <option value="bnb-cleaning">BnB Cleaning</option>
+                                    <option value="end-of-lease">End of Lease Cleaning</option>
+                                    <option value="pressure-wash">Pressure Washing</option>
+                                    <option value="strip-and-seal">Strip and Seal</option>
+                                    <option value="lawn-mowing">Lawn Mowing</option>
+                                    <option value="window-cleaning">Window Cleaning</option>
+                                    <option value="floor-scrubbing">Floor Scrubbing</option>
+                                    <option value="carpet-cleaning">Carpet Cleaning</option>
+                                    <option value="rubbish-removal">Rubbish Removal</option>
+                                </select>
+                            </div>
                         </div>
 
                         <div className="mb-6">
@@ -187,10 +208,10 @@ const Contact = () => {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] rounded-3xl overflow-hidden shadow-lg border border-gray-100 relative group"
+                    className="w-full h-[250px] sm:h-[350px] md:h-[400px] lg:h-[450px] rounded-3xl overflow-hidden shadow-lg border border-gray-100 relative group"
                 >
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.2038596228!2d55.27403931501456!3d25.19578098389544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43348a67e24b%3A0xff45e502e1ceb7e2!2sCanadian%20Specialist%20Hospital!5e0!3m2!1sen!2s!4v1642339445678!5m2!1sen!2s"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d104278.43129592658!2d149.01254388657497!3d35.28131349942485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b164a69b0db375d%3A0x500ea6ea441ab30!2sCanberra%20ACT%2C%20Australia!5e0!3m2!1sen!2s!4v1715433445678!5m2!1sen!2s"
                         width="100%"
                         height="100%"
                         style={{ border: 0 }}

@@ -12,29 +12,7 @@ const Footer = () => {
             <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
 
             <div className="container-wrapper relative z-10">
-                {/* Newsletter Section */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20 pb-12 border-b border-gray-800/50 items-center">
-                    <div>
-                        <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3">Join our Newsletter</h3>
-                        <p className="text-gray-400 max-w-md">Stay updated with our latest cleaning tips, special offers, and housekeeping hacks.</p>
-                    </div>
-                    <form className="relative group max-w-lg lg:ml-auto w-full" onSubmit={(e) => e.preventDefault()}>
-                        <div className="flex flex-col sm:flex-row gap-3">
-                            <input
-                                type="email"
-                                placeholder="Enter your email"
-                                className="flex-grow bg-white/5 border border-white/10 rounded-xl px-6 py-4 outline-none focus:border-primary transition-all text-white placeholder:text-gray-500"
-                            />
-                            <motion.button
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
-                                className="bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-xl font-semibold flex items-center justify-center gap-2 transition-all shadow-lg shadow-primary/20"
-                            >
-                                Subscribe <Send size={18} />
-                            </motion.button>
-                        </div>
-                    </form>
-                </div>
+
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
                     {/* Brand Section */}
@@ -137,20 +115,7 @@ const Footer = () => {
                     </div>
                 </div>
 
-                {/* Trust Badges */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-10 border-t border-gray-800/30 mb-12">
-                    {[
-                        { icon: ShieldCheck, text: "Fully Insured" },
-                        { icon: Award, text: "NDIS Provider" },
-                        { icon: Star, text: "Top Rated" },
-                        { icon: CheckCircle, text: "Police Checked" }
-                    ].map((badge, idx) => (
-                        <div key={idx} className="flex flex-col items-center gap-2 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-                            <badge.icon size={24} className="text-primary" />
-                            <span className="text-[10px] uppercase tracking-widest font-bold text-gray-400">{badge.text}</span>
-                        </div>
-                    ))}
-                </div>
+
 
                 <div className="border-t border-gray-800/50 pt-8 text-sm text-gray-500">
                     <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
