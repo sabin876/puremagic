@@ -156,6 +156,14 @@ const Contact = () => {
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
                             <div>
+                                <label className="block text-sm font-semibold text-gray-700 mb-2">Post Code</label>
+                                <input
+                                    type="text"
+                                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-gray-50 focus:bg-white"
+                                    placeholder="2600"
+                                />
+                            </div>
+                            <div>
                                 <label className="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
                                 <input
                                     type="tel"

@@ -68,29 +68,8 @@ const Blog = () => {
         <section id="blog" className="py-12 bg-[#F8FAFC] relative overflow-hidden font-sans">
             {/* Background Animations */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                {[...Array(10)].map((_, i) => (
-                    <motion.div
-                        key={`bubble-${i}`}
-                        className="absolute rounded-full bg-primary/5 backdrop-blur-3xl"
-                        style={{
-                            width: Math.random() * 300 + 100,
-                            height: Math.random() * 300 + 100,
-                            left: `${Math.random() * 100}%`,
-                            top: `${Math.random() * 100}%`,
-                        }}
-                        animate={{
-                            x: [0, Math.random() * 100 - 50],
-                            y: [0, Math.random() * 100 - 50],
-                            scale: [1, 1.1, 1],
-                        }}
-                        transition={{
-                            duration: Math.random() * 10 + 10,
-                            repeat: Infinity,
-                            delay: Math.random() * 5,
-                            ease: "easeInOut"
-                        }}
-                    />
-                ))}
+                {/* We need consistent random values to avoid hydration mismatch and lint errors */}
+                <Bubbles />
             </div>
 
             <div className="container mx-auto px-4 relative z-10">
@@ -212,6 +191,55 @@ const Blog = () => {
 
             </div>
         </section>
+    );
+};
+
+const Bubbles = () => {
+    const [bubbles, setBubbles] = React.useState([]);
+
+    React.useEffect(() => {
+        const generatedBubbles = [...Array(10)].map((_, i) => ({
+            id: i,
+            width: Math.random() * 300 + 100,
+            height: Math.random() * 300 + 100,
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+            x: [0, Math.random() * 100 - 50],
+            y: [0, Math.random() * 100 - 50],
+            duration: Math.random() * 10 + 10,
+            delay: Math.random() * 5
+        }));
+        setBubbles(generatedBubbles);
+    }, []);
+
+    if (bubbles.length === 0) return null;
+
+    return (
+        <>
+            {bubbles.map((bubble) => (
+                <motion.div
+                    key={`bubble-${bubble.id}`}
+                    className="absolute rounded-full bg-primary/5 backdrop-blur-3xl"
+                    style={{
+                        width: bubble.width,
+                        height: bubble.height,
+                        left: bubble.left,
+                        top: bubble.top,
+                    }}
+                    animate={{
+                        x: bubble.x,
+                        y: bubble.y,
+                        scale: [1, 1.1, 1],
+                    }}
+                    transition={{
+                        duration: bubble.duration,
+                        repeat: Infinity,
+                        delay: bubble.delay,
+                        ease: "easeInOut"
+                    }}
+                />
+            ))}
+        </>
     );
 };
 

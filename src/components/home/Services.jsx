@@ -100,56 +100,7 @@ const Services = () => {
 
             {/* Background Animations */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                {/* Floating Bubbles - Made more visible */}
-                {[...Array(15)].map((_, i) => (
-                    <motion.div
-                        key={`bubble-${i}`}
-                        className="absolute rounded-full bg-blue-400/30 backdrop-blur-sm border-2 border-white/60 shadow-sm"
-                        style={{
-                            width: Math.random() * 60 + 20,
-                            height: Math.random() * 60 + 20,
-                            left: `${Math.random() * 100}%`,
-                            bottom: -100
-                        }}
-                        animate={{
-                            y: [0, -1000],
-                            x: [0, Math.random() * 100 - 50],
-                            opacity: [0, 1, 0], // Fully visible at peak
-                            rotate: [0, 360]
-                        }}
-                        transition={{
-                            duration: Math.random() * 10 + 10,
-                            repeat: Infinity,
-                            delay: Math.random() * 10,
-                            ease: "linear"
-                        }}
-                    />
-                ))}
-
-                {/* Sparkling Stars - Made larger and brighter */}
-                {[...Array(12)].map((_, i) => (
-                    <motion.div
-                        key={`star-${i}`}
-                        className="absolute text-blue-500/60"
-                        style={{
-                            left: `${Math.random() * 100}%`,
-                            top: `${Math.random() * 100}%`,
-                        }}
-                        animate={{
-                            scale: [0, 1.5, 0], // Larger scale pulse
-                            opacity: [0, 1, 0],
-                            rotate: [0, 180]
-                        }}
-                        transition={{
-                            duration: Math.random() * 3 + 2,
-                            repeat: Infinity,
-                            delay: Math.random() * 5,
-                            ease: "easeInOut"
-                        }}
-                    >
-                        <Sparkles size={Math.random() * 30 + 15} fill="currentColor" />
-                    </motion.div>
-                ))}
+                <Particles />
             </div>
 
 
@@ -269,6 +220,90 @@ const Services = () => {
 
             </div>
         </section>
+    );
+};
+
+const Particles = () => {
+    const [data, setData] = React.useState({ bubbles: [], stars: [] });
+
+    React.useEffect(() => {
+        const bubblesData = [...Array(15)].map((_, i) => ({
+            id: i,
+            width: Math.random() * 60 + 20,
+            height: Math.random() * 60 + 20,
+            left: `${Math.random() * 100}%`,
+            x: [0, Math.random() * 100 - 50],
+            duration: Math.random() * 10 + 10,
+            delay: Math.random() * 10
+        }));
+
+        const starsData = [...Array(12)].map((_, i) => ({
+            id: i,
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+            duration: Math.random() * 3 + 2,
+            delay: Math.random() * 5,
+            size: Math.random() * 30 + 15
+        }));
+
+        setData({ bubbles: bubblesData, stars: starsData });
+    }, []);
+
+    if (data.bubbles.length === 0) return null;
+
+    return (
+        <>
+            {/* Floating Bubbles */}
+            {data.bubbles.map((bubble) => (
+                <motion.div
+                    key={`bubble-${bubble.id}`}
+                    className="absolute rounded-full bg-blue-400/30 backdrop-blur-sm border-2 border-white/60 shadow-sm"
+                    style={{
+                        width: bubble.width,
+                        height: bubble.height,
+                        left: bubble.left,
+                        bottom: -100
+                    }}
+                    animate={{
+                        y: [0, -1000],
+                        x: bubble.x,
+                        opacity: [0, 1, 0], // Fully visible at peak
+                        rotate: [0, 360]
+                    }}
+                    transition={{
+                        duration: bubble.duration,
+                        repeat: Infinity,
+                        delay: bubble.delay,
+                        ease: "linear"
+                    }}
+                />
+            ))}
+
+            {/* Sparkling Stars */}
+            {data.stars.map((star) => (
+                <motion.div
+                    key={`star-${star.id}`}
+                    className="absolute text-blue-500/60"
+                    style={{
+                        left: star.left,
+                        top: star.top,
+                    }}
+                    animate={{
+                        scale: [0, 1.5, 0], // Larger scale pulse
+                        opacity: [0, 1, 0],
+                        rotate: [0, 180]
+                    }}
+                    transition={{
+                        duration: star.duration,
+                        repeat: Infinity,
+                        delay: star.delay,
+                        ease: "easeInOut"
+                    }}
+                >
+                    <Sparkles size={star.size} fill="currentColor" />
+                </motion.div>
+            ))}
+        </>
     );
 };
 

@@ -33,7 +33,7 @@ const Navbar = () => {
             items: ["About Us", "Our Guarantee", "Cleaning Process"]
         },
         { name: "FAQ", href: "#" },
-        { name: "Locations", href: "#" },
+
         { name: "Contact", href: "/contact" },
     ];
 
@@ -42,23 +42,22 @@ const Navbar = () => {
             <div className="bg-topbar py-1.5 sm:py-2 px-4 shadow-sm min-h-[32px] flex items-center">
                 <div className="container mx-auto flex justify-between items-center relative">
                     {/* Centered Promotional Message */}
-                    <p className="text-white font-medium text-[10px] sm:text-xs md:text-sm tracking-wide flex-grow text-center px-2 sm:pl-20">
+                    <p className="text-primary font-medium text-[10px] sm:text-xs md:text-sm tracking-wide flex-grow text-center px-2 sm:pl-20">
                         ✨ Sparkling Homes, Happy Hearts – Experience the <span className="font-bold underline">Pure Magic Clean</span> Today! ✨
                     </p>
 
-                    {/* Social Media Icons (Right) */}
-                    <div className="flex items-center gap-3 hidden sm:flex pr-2 text-maid-green">
-                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                            <Facebook size={16} />
+                    <div className="flex items-center gap-2 hidden sm:flex pr-2">
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-7 h-7 bg-white rounded-full flex items-center justify-center text-[#001E6C] hover:bg-gray-100 transition-colors">
+                            <Facebook size={14} />
                         </a>
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                            <Instagram size={16} />
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-7 h-7 bg-white rounded-full flex items-center justify-center text-[#001E6C] hover:bg-gray-100 transition-colors">
+                            <Instagram size={14} />
                         </a>
-                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                            <Linkedin size={16} />
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-7 h-7 bg-white rounded-full flex items-center justify-center text-[#001E6C] hover:bg-gray-100 transition-colors">
+                            <Linkedin size={14} />
                         </a>
-                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                            <Twitter size={16} />
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="w-7 h-7 bg-white rounded-full flex items-center justify-center text-[#001E6C] hover:bg-gray-100 transition-colors">
+                            <Twitter size={14} />
                         </a>
                     </div>
                 </div>
