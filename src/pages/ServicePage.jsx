@@ -54,7 +54,7 @@ const ServicePage = () => {
                         className="w-full h-full object-cover"
                     />
                     {/* Blue Overlay to match the dusting page design */}
-                    <div className="absolute inset-0 bg-[#5B8FA3]/90 md:bg-[#5B8FA3]/85"></div>
+                    <div className="absolute inset-0 bg-primary/90 md:bg-primary/85"></div>
                 </div>
 
                 {/* Content */}
@@ -113,13 +113,13 @@ const ServicePage = () => {
                     >
                         <button
                             onClick={handleGetQuote}
-                            className="px-8 py-3.5 bg-[#9FC131] hover:bg-[#8AAD28] text-white font-bold text-base rounded-md transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl min-w-[200px]"
+                            className="px-8 py-3.5 bg-maid-green hover:bg-[#349c71] text-white font-bold text-base rounded-md transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl min-w-[200px]"
                         >
                             Get Quote
                         </button>
                         <button
                             onClick={handleFindLocation}
-                            className="px-8 py-3.5 bg-transparent border-2 border-white hover:bg-white hover:text-[#5B8FA3] text-white font-bold text-base rounded-md transition-all duration-300 transform hover:scale-105 shadow-lg min-w-[200px] flex items-center justify-center gap-2"
+                            className="px-8 py-3.5 bg-transparent border-2 border-white hover:bg-white hover:text-primary text-white font-bold text-base rounded-md transition-all duration-300 transform hover:scale-105 shadow-lg min-w-[200px] flex items-center justify-center gap-2"
                         >
                             <MapPin size={20} />
                             Find Location Near You
@@ -139,13 +139,13 @@ const ServicePage = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
                         >
-                            <h2 className="text-3xl md:text-4xl font-bold text-[#0289D1] mb-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
                                 What's Included
                             </h2>
                             <ul className="space-y-3">
                                 {service.features.map((feature, index) => (
                                     <li key={index} className="flex items-start gap-3">
-                                        <div className="w-6 h-6 rounded-full bg-[#9FC131] flex items-center justify-center flex-shrink-0 mt-0.5">
+                                        <div className="w-6 h-6 rounded-full bg-maid-green flex items-center justify-center flex-shrink-0 mt-0.5">
                                             <svg
                                                 className="w-4 h-4 text-white"
                                                 fill="none"
@@ -175,13 +175,13 @@ const ServicePage = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
                         >
-                            <h2 className="text-3xl md:text-4xl font-bold text-[#0289D1] mb-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
                                 Key Benefits
                             </h2>
                             <ul className="space-y-3">
                                 {service.benefits.map((benefit, index) => (
                                     <li key={index} className="flex items-start gap-3">
-                                        <div className="w-6 h-6 rounded-full bg-[#0289D1] flex items-center justify-center flex-shrink-0 mt-0.5">
+                                        <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-0.5">
                                             <svg
                                                 className="w-4 h-4 text-white"
                                                 fill="none"
@@ -208,7 +208,7 @@ const ServicePage = () => {
             </section>
 
             {/* Call to Action Section */}
-            <section className="py-16 bg-gradient-to-r from-[#0289D1] to-[#01568a]">
+            <section className="py-16 bg-gradient-to-r from-primary to-primary-dark">
                 <div className="container mx-auto px-4 text-center">
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                         Ready to Get Started?
@@ -218,7 +218,7 @@ const ServicePage = () => {
                     </p>
                     <button
                         onClick={handleGetQuote}
-                        className="px-10 py-4 bg-[#9FC131] hover:bg-[#8AAD28] text-white font-bold text-lg rounded-md transition-all duration-300 transform hover:scale-105 shadow-xl"
+                        className="px-10 py-4 bg-maid-green hover:bg-[#349c71] text-white font-bold text-lg rounded-md transition-all duration-300 transform hover:scale-105 shadow-xl"
                     >
                         Get Your Free Quote Now
                     </button>

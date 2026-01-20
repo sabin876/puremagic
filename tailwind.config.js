@@ -7,9 +7,9 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#0289D1', // Logo Blue
-          light: '#4eb3e6',
-          dark: '#016196',
+          DEFAULT: '#038fd4', // Updated Brand Blue
+          light: '#4cc2ff',
+          dark: '#026ca0',
         },
         secondary: {
           DEFAULT: '#E1F5FE', // Light Blue Tint
@@ -19,7 +19,7 @@ export default {
           DEFAULT: '#B3E5FC', // Cyan/Light Blue highlight
         },
         'topbar': '#90CDF4', // Light blue for top bar
-        'maid-green': '#269581', // Teal/Green for CTA button
+        'maid-green': '#45c691', // Updated Brand Green
         dark: {
           DEFAULT: '#1e293b',
         }

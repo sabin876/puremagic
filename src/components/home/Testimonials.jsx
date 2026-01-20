@@ -84,7 +84,7 @@ const Testimonials = () => {
                 <div className="relative h-[120px] md:h-[160px] flex items-center justify-center mb-8">
                     {/* Curve Line (Decorative) */}
                     <svg className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[100px] -z-10 opacity-20 hidden md:block" viewBox="0 0 600 100" fill="none">
-                        <path d="M0 100 Q 300 0 600 100" stroke="#0289D1" strokeWidth="2" />
+                        <path d="M0 100 Q 300 0 600 100" stroke="#038fd4" strokeWidth="2" />
                     </svg>
 
                     <div className="flex items-center justify-center relative w-full max-w-3xl mx-auto h-full">

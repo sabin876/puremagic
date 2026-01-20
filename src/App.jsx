@@ -5,7 +5,7 @@ import Footer from './components/layout/Footer';
 import FloatingWhatsApp from './components/common/FloatingWhatsApp';
 import HomePage from './pages/HomePage';
 import ScrollToTop from './components/common/ScrollToTop';
-import ChatWidget from './components/common/ChatWidget';
+import ContactFormWidget from './components/common/ContactFormWidget';
 import ContactPage from './pages/ContactPage';
 import AboutPage from './pages/AboutPage';
 import ServicePage from './pages/ServicePage';
@@ -26,7 +26,7 @@ function App() {
         </Routes>
       </main>
 
-      <ChatWidget />
+      <ContactFormWidget />
       <FloatingWhatsApp />
 
       <Footer />

@@ -1,131 +1,139 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Facebook, Instagram, Twitter, CheckCircle, Phone, Mail, MapPin, Send, ShieldCheck, Star, Award } from 'lucide-react';
-import logoImg from '../../assets/logo_white.png';
+import { Phone, Mail, Clock, ShieldCheck, CheckCircle, Star, MessageSquare, Calculator } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <footer className="bg-dark text-white pt-20 pb-8 border-t border-gray-800/50 relative overflow-hidden">
-            {/* Background Decorative Elements */}
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-light via-primary to-primary-light opacity-50"></div>
-            <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
-            <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+        <footer className="bg-white px-4 sm:px-6 lg:px-8 pb-8 pt-12">
+            <div className="max-w-7xl mx-auto">
+                {/* Main Footer Container - Matches Image Design */}
+                <div className="bg-maid-green rounded-[2rem] text-white p-8 sm:p-12 lg:p-16 relative overflow-hidden shadow-2xl">
 
-            <div className="container-wrapper relative z-10">
+                    {/* Brand Blue Version - Applying User Theme */}
+                    <div className="absolute inset-0 z-0 bg-primary"></div>
 
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-                    {/* Brand Section */}
-                    <div className="col-span-1">
+                    <div className="relative z-10 text-center max-w-5xl mx-auto">
+                        {/* Rating Badge */}
                         <motion.div
+                            initial={{ opacity: 0, y: 10 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="flex items-center justify-center gap-2 mb-6 sm:mb-8"
+                        >
+                            <Star size={18} className="text-yellow-400 fill-yellow-400" />
+                            <span className="text-sm sm:text-base font-semibold tracking-wide">4.7/5 Rating • 500+ Happy Customers</span>
+                        </motion.div>
+
+                        {/* Heading */}
+                        <motion.h2
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="flex items-center gap-2 mb-8"
+                            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-8 leading-[1.1]"
                         >
-                            <img src={logoImg} alt="PureMagic" className="h-16 w-auto" />
+                            Ready to Experience the <span className="text-orange-400">Difference?</span>
+                        </motion.h2>
+
+                        {/* Subtitle */}
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="text-base sm:text-lg md:text-xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed font-medium"
+                        >
+                            Professional, reliable, and eco-friendly cleaning solutions in Australia.
+                        </motion.p>
+
+                        {/* CTA Buttons - Matching Image Precisely */}
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            className="flex flex-col sm:flex-row justify-center items-center gap-6 mb-16"
+                        >
+                            <Link
+                                to="/contact"
+                                className="w-full sm:w-auto bg-white text-primary px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:bg-gray-100 transition-all flex items-center justify-center gap-3"
+                            >
+                                <Calculator size={22} className="text-primary" />
+                                Get Free Quote
+                            </Link>
+                            <Link
+                                to="/contact"
+                                className="w-full sm:w-auto border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-all flex items-center justify-center gap-3"
+                            >
+                                <MessageSquare size={22} className="text-white" />
+                                Contact Us
+                            </Link>
                         </motion.div>
-                        <p className="text-gray-400 mb-8 leading-relaxed text-sm">
-                            Australia's most trusted cleaning service. We bring professional, eco-friendly, and reliable cleaning solutions to your residential and commercial properties.
-                        </p>
-                        <div className="flex gap-4">
-                            {[
-                                { icon: Facebook, href: "#" },
-                                { icon: Instagram, href: "#" },
-                                { icon: Twitter, href: "#" }
-                            ].map((social, index) => (
-                                <motion.a
-                                    key={index}
-                                    href={social.href}
-                                    whileHover={{ y: -5, backgroundColor: 'var(--primary)' }}
-                                    className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center transition-all text-white hover:text-white"
-                                >
-                                    <social.icon size={18} />
-                                </motion.a>
-                            ))}
+
+                        {/* Contact Info Bar - Inner Card Style */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="bg-white/5 backdrop-blur-sm rounded-3xl border border-white/10 p-4 sm:p-8 mb-8"
+                        >
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4 divide-y md:divide-y-0 md:divide-x divide-white/10">
+                                {/* CALL NOW */}
+                                <div className="flex items-center gap-4 justify-center md:px-4 pb-6 md:pb-0">
+                                    <div className="w-12 h-12 rounded-xl bg-black/20 flex items-center justify-center shrink-0">
+                                        <Phone size={24} className="text-orange-400" />
+                                    </div>
+                                    <div className="text-left">
+                                        <span className="block text-[10px] font-bold uppercase tracking-widest text-white/60">CALL NOW</span>
+                                        <span className="text-xl sm:text-2xl font-bold text-white tracking-tight">0483 982 111</span>
+                                    </div>
+                                </div>
+
+                                {/* EMAIL US */}
+                                <div className="flex items-center gap-4 justify-center md:px-4 py-6 md:py-0">
+                                    <div className="w-12 h-12 rounded-xl bg-black/20 flex items-center justify-center shrink-0">
+                                        <Mail size={24} className="text-green-400" />
+                                    </div>
+                                    <div className="text-left">
+                                        <span className="block text-[10px] font-bold uppercase tracking-widest text-white/60">EMAIL US</span>
+                                        <span className="text-[14px] sm:text-[16px] font-bold text-white break-all">contact@puremagiccleaning.com.au</span>
+                                    </div>
+                                </div>
+
+                                {/* RESPONSE TIME */}
+                                <div className="flex items-center gap-4 justify-center md:px-4 pt-6 md:pt-0">
+                                    <div className="w-12 h-12 rounded-xl bg-black/20 flex items-center justify-center shrink-0">
+                                        <Clock size={24} className="text-blue-400" />
+                                    </div>
+                                    <div className="text-left">
+                                        <span className="block text-[10px] font-bold uppercase tracking-widest text-white/60">RESPONSE TIME</span>
+                                        <span className="text-xl sm:text-2xl font-bold text-white tracking-tight">Within 2 Hours</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        {/* Trust Badges - Text with small dot separators */}
+                        <div className="flex flex-wrap justify-center items-center gap-y-2 gap-x-4 text-[10px] sm:text-xs font-bold text-white/60 uppercase tracking-widest">
+                            <div className="flex items-center gap-1.5 border border-white/10 px-3 py-1 rounded-full">
+                                <ShieldCheck size={14} className="text-primary" />
+                                <span>Fully Insured & Licensed</span>
+                            </div>
+                            <span className="hidden sm:inline opacity-30">|</span>
+                            <div className="flex items-center gap-1.5 border border-white/10 px-3 py-1 rounded-full">
+                                <Clock size={14} className="text-primary" />
+                                <span>24/7 Emergency Service</span>
+                            </div>
+                            <span className="hidden sm:inline opacity-30">|</span>
+                            <div className="flex items-center gap-1.5 border border-white/10 px-3 py-1 rounded-full">
+                                <Star size={14} className="text-primary" />
+                                <span>100% Satisfaction Guarantee</span>
+                            </div>
                         </div>
-                    </div>
-
-                    {/* Quick Links */}
-                    <div>
-                        <h4 className="text-lg font-bold mb-8 text-white relative inline-block">
-                            Quick Links
-                            <span className="absolute -bottom-2 left-0 w-8 h-1 bg-primary rounded-full"></span>
-                        </h4>
-                        <ul className="space-y-4 text-sm text-gray-400">
-                            {['Home', 'About Us', 'Services', 'Our Process', 'Get a Quote'].map((link) => (
-                                <li key={link}>
-                                    <a href={`#${link.toLowerCase().replace(' ', '-')}`} className="hover:text-primary transition-all hover:pl-2 flex items-center gap-2">
-                                        <div className="w-1.5 h-1.5 rounded-full bg-primary/40 group-hover:bg-primary transition-colors"></div>
-                                        {link}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* Our Services */}
-                    <div>
-                        <h4 className="text-lg font-bold mb-8 text-white relative inline-block">
-                            Specialized Services
-                            <span className="absolute -bottom-2 left-0 w-8 h-1 bg-primary rounded-full"></span>
-                        </h4>
-                        <ul className="space-y-4 text-sm text-gray-400">
-                            {['House Cleaning', 'End of Lease', 'Office Cleaning', 'Commercial Cleaning', 'Deep Clean'].map((service) => (
-                                <li key={service}><a href="#" className="hover:text-primary transition-all hover:pl-2 inline-block">{service}</a></li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* Contact Info */}
-                    <div>
-                        <h4 className="text-lg font-bold mb-8 text-white relative inline-block">
-                            Contact Details
-                            <span className="absolute -bottom-2 left-0 w-8 h-1 bg-primary rounded-full"></span>
-                        </h4>
-                        <ul className="space-y-5 text-sm text-gray-400">
-                            <li className="flex items-start gap-4 group">
-                                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors">
-                                    <Phone size={18} className="text-primary" />
-                                </div>
-                                <div>
-                                    <span className="block text-white font-medium mb-1">Call Us</span>
-                                    <span>1300 000 000 (Mon-Fri)</span>
-                                </div>
-                            </li>
-                            <li className="flex items-start gap-4 group">
-                                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors">
-                                    <Mail size={18} className="text-primary" />
-                                </div>
-                                <div>
-                                    <span className="block text-white font-medium mb-1">Email Us</span>
-                                    <span>hello@puremagic.com.au</span>
-                                </div>
-                            </li>
-                            <li className="flex items-start gap-4 group">
-                                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors">
-                                    <MapPin size={18} className="text-primary" />
-                                </div>
-                                <div>
-                                    <span className="block text-white font-medium mb-1">Location</span>
-                                    <span>Sydney, NSW, Australia</span>
-                                </div>
-                            </li>
-                        </ul>
                     </div>
                 </div>
 
-
-
-                <div className="border-t border-gray-800/50 pt-8 text-sm text-gray-500">
-                    <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
-                        <p>© {new Date().getFullYear()} PureMagic Cleaning Services. Excellence in every corner.</p>
-                        <div className="flex gap-8">
-                            <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
-                            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-                            <a href="#" className="hover:text-white transition-colors">Cookie Policy</a>
-                        </div>
-                    </div>
+                {/* Footer Credits */}
+                <div className="mt-8 text-center text-gray-400 text-[10px] tracking-widest uppercase font-bold">
+                    <p>© {new Date().getFullYear()} PureMagic Cleaning Australia. All Rights Reserved.</p>
                 </div>
             </div>
         </footer>

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Calendar } from 'lucide-react';
 import heroBg from '../../assets/hero_bg_new.png';
 import heroVideo from '../../assets/Untitled design.mp4';
 
@@ -62,57 +62,115 @@ const Hero = () => {
             </div>
 
             {/* Main Content */}
-            <div className="container-wrapper relative z-10 pt-2 md:pt-8 lg:pt-10 text-center">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className="max-w-5xl mx-auto px-6"
-                >
-                    <h2 className="text-white font-bold tracking-[0.2em] uppercase mb-4 text-[10px] sm:text-sm md:text-base opacity-80">
-                        Proudly Serving Canberra & All Surrounding Areas
-                    </h2>
-                    <h1 className="text-[2.2rem] sm:text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] mb-6 sm:mb-8 tracking-tight">
-                        Professional Cleaning <br className="hidden sm:block" />
-                        <span className="text-white">Services You Can Trust</span>
+            <div className="container-wrapper relative z-10 pt-2 md:pt-12 lg:pt-16 text-center">
+                <div className="max-w-5xl mx-auto px-6">
+                    {/* Main Headline with Staggered Animation */}
+                    <h1 className="text-[1.8rem] xs:text-[2.2rem] sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.15] mb-6 sm:mb-8 tracking-tight max-w-[320px] sm:max-w-none mx-auto">
+                        <motion.span
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            className="inline-block"
+                        >
+                            Professional
+                        </motion.span>{' '}
+                        <motion.span
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.4 }}
+                            className="inline-block"
+                        >
+                            Cleaning
+                        </motion.span>{' '}
+                        <br className="hidden md:block" />
+                        <motion.span
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.8, delay: 0.6 }}
+                            className="text-primary inline-block relative"
+                        >
+                            <span className="relative z-10">Services in Australia</span>
+                            {/* Shimmer Effect */}
+                            <motion.span
+                                initial={{ x: '-100%' }}
+                                animate={{ x: '200%' }}
+                                transition={{
+                                    duration: 2,
+                                    delay: 1.2,
+                                    repeat: Infinity,
+                                    repeatDelay: 5,
+                                    ease: "easeInOut"
+                                }}
+                                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                                style={{ width: '50%' }}
+                            />
+                        </motion.span>
                     </h1>
-                    <p className="text-sm sm:text-lg md:text-xl text-gray-100 mb-10 sm:mb-12 leading-relaxed max-w-sm sm:max-w-2xl mx-auto opacity-90 font-medium">
-                        Over 18 years of experience delivering spotless results.
-                        Reliable, affordable, and eco-friendly cleaning services.
-                    </p>
-                    <div className="flex justify-center">
+
+                    {/* Subheadline with Letter-by-Letter Animation */}
+                    <motion.h2
+                        initial={{ opacity: 0, letterSpacing: '0.5em' }}
+                        animate={{ opacity: 0.95, letterSpacing: '0.2em' }}
+                        transition={{ duration: 1, delay: 0.8 }}
+                        className="text-white font-bold uppercase mb-6 text-[9px] xs:text-[11px] sm:text-sm md:text-base sm:max-w-none mx-auto leading-relaxed whitespace-nowrap"
+                    >
+                        BEYOND CLEAN, BEYOND EXPECTATIONS
+                    </motion.h2>
+
+                    {/* Description with Blur Fade-in */}
+                    <motion.p
+                        initial={{ opacity: 0, filter: 'blur(10px)' }}
+                        animate={{ opacity: 0.9, filter: 'blur(0px)' }}
+                        transition={{ duration: 0.8, delay: 1.2 }}
+                        className="text-xs sm:text-lg md:text-xl text-gray-100 mb-10 sm:mb-12 leading-relaxed max-w-[280px] sm:max-w-2xl mx-auto font-medium"
+                    >
+                        Trusted by hundreds of satisfied customers across Australia. Professional cleaners offering house cleaning, commercial cleaning, carpet cleaning, and couch cleaning services.
+                    </motion.p>
+
+                    {/* Buttons with Enhanced Entrance */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 1.4 }}
+                        className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6"
+                    >
+                        {/* View All Services (Outline) */}
                         <motion.div
-                            whileHover={{ scale: 1.05 }}
+                            whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(255,255,255,0.3)' }}
                             whileTap={{ scale: 0.95 }}
+                            initial={{ x: -20, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            transition={{ duration: 0.5, delay: 1.6 }}
+                            className="w-full sm:w-auto"
+                        >
+                            <Link
+                                to="/services"
+                                className="inline-flex w-full sm:w-auto border-2 border-white/80 hover:bg-white/10 text-white px-8 py-3.5 rounded-full font-bold text-base shadow-lg justify-center items-center gap-2 transition-all"
+                            >
+                                <span>View All Services</span>
+                                <ArrowRight size={20} />
+                            </Link>
+                        </motion.div>
+
+                        {/* Get Free Quote (Theme Blue) */}
+                        <motion.div
+                            whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(3,143,212,0.5)' }}
+                            whileTap={{ scale: 0.95 }}
+                            initial={{ x: 20, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            transition={{ duration: 0.5, delay: 1.8 }}
+                            className="w-full sm:w-auto"
                         >
                             <Link
                                 to="/contact"
-                                className="relative bg-[#1a8037] hover:bg-[#146c2e] text-white px-8 sm:px-10 py-3.5 sm:py-4 rounded-full font-bold text-base sm:text-lg shadow-xl flex items-center gap-2 transition-all group overflow-hidden border-none"
+                                className="inline-flex w-full sm:w-auto bg-primary hover:bg-primary-dark text-white px-8 py-3.5 rounded-full font-bold text-base shadow-xl justify-center items-center gap-2 transition-all"
                             >
-                                {/* Animated Light Border Effect */}
-                                <motion.div
-                                    className="absolute inset-0 rounded-full pb-[2px]"
-                                    style={{
-                                        background: 'conic-gradient(from 0deg, transparent, transparent, #22c55e, transparent, transparent)',
-                                        padding: '2px',
-                                        mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-                                        WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-                                        maskComposite: 'exclude',
-                                        WebkitMaskComposite: 'xor',
-                                    }}
-                                    animate={{ rotate: 360 }}
-                                    transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                                />
-
-                                {/* Inner Shine Effect */}
-                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-shimmer" />
-
-                                <span className="relative z-10">Book Now</span>
-                                <ArrowRight size={20} className="relative z-10" />
+                                <span>Get Free Quote</span>
+                                <Calendar size={20} />
                             </Link>
                         </motion.div>
-                    </div>
-                </motion.div>
+                    </motion.div>
+                </div>
             </div>
 
             {/* Arched Professional Cards Section - Flat Background */}
