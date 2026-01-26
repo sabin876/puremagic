@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Phone, ChevronDown, Facebook, Instagram, Linkedin, Twitter, MoreVertical } from 'lucide-react';
+import {
+    Menu, X, Phone, ChevronDown, Facebook, Instagram, Linkedin, Twitter,
+    Building2, Home, Key, Waves, Layers, Scissors, Wind, Brush, Sparkles, Trash2,
+    Briefcase, ShieldCheck, ClipboardCheck
+} from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import VacuumIcon from '../common/VacuumIcon';
 
@@ -15,26 +19,30 @@ const Navbar = () => {
             href: "#",
             isDropdown: true,
             items: [
-                { name: "Commercial Cleaning", slug: "commercial-cleaning" },
-                { name: "BnB Cleaning", slug: "bnb-cleaning" },
-                { name: "End of Lease", slug: "end-of-lease" },
-                { name: "Pressure Wash", slug: "pressure-wash" },
-                { name: "Strip and Seal", slug: "strip-and-seal" },
-                { name: "Lawn Mowing", slug: "lawn-mowing" },
-                { name: "Window Cleaning", slug: "window-cleaning" },
-                { name: "Floor Scrubbing", slug: "floor-scrubbing" },
-                { name: "Carpet Cleaning", slug: "carpet-cleaning" },
-                { name: "Rubbish Removal", slug: "rubbish-removal" }
+                { name: "Commercial Cleaning", slug: "commercial-cleaning", icon: Building2 },
+                { name: "BnB Cleaning", slug: "bnb-cleaning", icon: Home },
+                { name: "End of Lease", slug: "end-of-lease", icon: Key },
+                { name: "Pressure Wash", slug: "pressure-wash", icon: Waves },
+                { name: "Strip and Seal", slug: "strip-and-seal", icon: Layers },
+                { name: "Lawn Mowing", slug: "lawn-mowing", icon: Scissors },
+                { name: "Window Cleaning", slug: "window-cleaning", icon: Wind },
+                { name: "Floor Scrubbing", slug: "floor-scrubbing", icon: Brush },
+                { name: "Carpet Cleaning", slug: "carpet-cleaning", icon: Sparkles },
+                { name: "Rubbish Removal", slug: "rubbish-removal", icon: Trash2 }
             ]
         },
         {
             name: "Why Pure Magic?",
             href: "#",
             isDropdown: true,
-            items: ["About Us", "Our Guarantee", "Cleaning Process"]
+            items: [
+                { name: "About Us", icon: Briefcase },
+                { name: "Our Guarantee", icon: ShieldCheck },
+                { name: "Cleaning Process", icon: ClipboardCheck }
+            ]
         },
         { name: "FAQ", href: "#" },
-
+        { name: "Blog", href: "/#blog" },
         { name: "Contact", href: "/contact" },
     ];
 
@@ -187,25 +195,15 @@ const Navbar = () => {
                                                         className="absolute top-full left-0 mt-0 w-64 bg-white rounded-lg shadow-xl border border-gray-100 overflow-hidden z-50 py-2"
                                                     >
                                                         {link.items.map((item, i) => (
-                                                            typeof item === 'string' ? (
-                                                                <Link
-                                                                    key={i}
-                                                                    to={item === "About Us" ? "/about" : "#"}
-                                                                    className="block px-5 py-2.5 text-sm text-gray-600 hover:bg-secondary hover:text-primary font-medium transition-colors"
-                                                                    onClick={() => setActiveDropdown(null)}
-                                                                >
-                                                                    {item}
-                                                                </Link>
-                                                            ) : (
-                                                                <Link
-                                                                    key={i}
-                                                                    to={`/services/${item.slug}`}
-                                                                    className="block px-5 py-2.5 text-sm text-gray-600 hover:bg-secondary hover:text-primary font-medium transition-colors"
-                                                                    onClick={() => setActiveDropdown(null)}
-                                                                >
-                                                                    {item.name}
-                                                                </Link>
-                                                            )
+                                                            <Link
+                                                                key={i}
+                                                                to={item.slug ? `/services/${item.slug}` : (item.name === "About Us" ? "/about" : "#")}
+                                                                className="flex items-center gap-3 px-5 py-2.5 text-sm text-gray-600 hover:bg-secondary hover:text-primary font-medium transition-colors group/item"
+                                                                onClick={() => setActiveDropdown(null)}
+                                                            >
+                                                                {item.icon && <item.icon size={18} className="text-primary/60 group-hover/item:text-primary transition-colors" />}
+                                                                {item.name}
+                                                            </Link>
                                                         ))}
                                                     </motion.div>
                                                 )}
@@ -260,7 +258,7 @@ const Navbar = () => {
                                         transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shimmer" />
-                                    <span className="relative z-10">Book now</span>
+                                    <span className="relative z-10 text-[0.9rem] sm:text-sm">Get free quote</span>
                                 </Link>
                             </motion.div>
                         </div>
@@ -309,31 +307,19 @@ const Navbar = () => {
                                                         className={`transition-transform ${activeDropdown === link.name ? 'rotate-180' : ''}`}
                                                     />
                                                 </button>
-                                                {activeDropdown === link.name && (
-                                                    <div className="pl-3 sm:pl-4 pb-2 space-y-1.5 sm:space-y-2 text-gray-600">
-                                                        {link.items.map((item, i) => (
-                                                            typeof item === 'string' ? (
-                                                                <Link
-                                                                    key={i}
-                                                                    to={item === "About Us" ? "/about" : "#"}
-                                                                    className="block py-1 text-xs sm:text-sm"
-                                                                    onClick={() => { setActiveDropdown(null); setIsOpen(false); }}
-                                                                >
-                                                                    {item}
-                                                                </Link>
-                                                            ) : (
-                                                                <Link
-                                                                    key={i}
-                                                                    to={`/services/${item.slug}`}
-                                                                    className="block py-1 text-xs sm:text-sm"
-                                                                    onClick={() => { setActiveDropdown(null); setIsOpen(false); }}
-                                                                >
-                                                                    {item.name}
-                                                                </Link>
-                                                            )
-                                                        ))}
-                                                    </div>
-                                                )}
+                                                <div className="pl-3 sm:pl-4 pb-2 space-y-1 sm:space-y-1.5 text-gray-600">
+                                                    {link.items.map((item, i) => (
+                                                        <Link
+                                                            key={i}
+                                                            to={item.slug ? `/services/${item.slug}` : (item.name === "About Us" ? "/about" : "#")}
+                                                            className="flex items-center gap-3 py-2 text-sm sm:text-base font-medium"
+                                                            onClick={() => { setActiveDropdown(null); setIsOpen(false); }}
+                                                        >
+                                                            {item.icon && <item.icon size={18} className="text-primary/70" />}
+                                                            {item.name}
+                                                        </Link>
+                                                    ))}
+                                                </div>
                                             </div>
                                         ) : (
                                             <Link
@@ -385,7 +371,7 @@ const Navbar = () => {
                                             transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-shimmer" />
-                                        <span className="relative z-10">Book now</span>
+                                        <span className="relative z-10 text-xs sm:text-sm">Get free quote</span>
                                     </Link>
                                 </motion.div>
                             </div>

@@ -65,8 +65,8 @@ const ContactFormWidget = () => {
                 onClick={() => setIsOpen(!isOpen)}
                 className={`fixed z-[60] bg-primary text-white shadow-xl hover:bg-primary-dark transition-colors flex items-center justify-center group
                     ${isOpen ? 'hidden sm:flex' : 'flex'}
-                    bottom-28 right-4 p-4
-                    sm:bottom-28 sm:right-8 sm:p-5
+                    bottom-24 right-6
+                    sm:bottom-32 sm:right-8 sm:p-5
                     rounded-full`}
                 style={{ boxShadow: "0 4px 15px rgba(3, 143, 212, 0.3)" }}
             >
@@ -106,10 +106,12 @@ const ContactFormWidget = () => {
                         animate={{ opacity: 1, x: 0, scale: 1 }}
                         exit={{ opacity: 0, x: 20, scale: 0.8 }}
                         transition={{ delay: 1, type: "spring", stiffness: 200 }}
-                        className="fixed bottom-[173px] right-[75px] sm:bottom-[175px] sm:right-28 bg-white text-primary px-5 py-2.5 rounded-xl shadow-lg border border-gray-100 z-50 flex items-center gap-2 pointer-events-none origin-right"
+                        className="fixed bottom-[158px] right-[24px] w-[60px] sm:bottom-[195px] sm:right-[32px] sm:w-[68px] flex justify-center z-50 pointer-events-none origin-bottom"
                     >
-                        <span className="text-sm font-bold whitespace-nowrap">Contact Us</span>
-                        <div className="absolute top-1/2 -right-2 -translate-y-1/2 w-0 h-0 border-t-8 border-t-transparent border-l-8 border-l-white border-b-8 border-b-transparent drop-shadow-sm" />
+                        <div className="relative bg-primary text-white px-3 py-1 rounded-full shadow-lg flex items-center justify-center">
+                            <span className="text-[9px] sm:text-[10px] font-bold whitespace-nowrap uppercase tracking-wider">Contact</span>
+                            <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-t-[4px] border-t-primary" />
+                        </div>
                     </motion.div>
                 )}
             </AnimatePresence>

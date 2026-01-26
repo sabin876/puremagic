@@ -62,7 +62,7 @@ const Hero = () => {
             </div>
 
             {/* Main Content */}
-            <div className="container-wrapper relative z-10 pt-2 md:pt-12 lg:pt-16 text-center">
+            <div className="container-wrapper relative z-10 pt-10 md:pt-24 lg:pt-32 pb-40 md:pb-64 lg:pb-80 text-center">
                 <div className="max-w-5xl mx-auto px-6">
                     {/* Main Headline with Staggered Animation */}
                     <h1 className="text-[1.8rem] xs:text-[2.2rem] sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.15] mb-6 sm:mb-8 tracking-tight max-w-[320px] sm:max-w-none mx-auto">

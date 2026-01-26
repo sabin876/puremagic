@@ -1,139 +1,150 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Phone, Mail, Clock, ShieldCheck, CheckCircle, Star, MessageSquare, Calculator } from 'lucide-react';
+import { Phone, Mail, MapPin, Send, Facebook, Instagram, Linkedin, Twitter, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import logoIcon from '../../assets/logo_icon_only.png';
 
 const Footer = () => {
+    const instagramImages = [
+        "https://images.unsplash.com/photo-1581578731522-632ee0434407?q=80&w=200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?q=80&w=200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1563453392212-326f5e854473?q=80&w=200&auto=format&fit=crop"
+    ];
+
     return (
-        <footer className="bg-white px-4 sm:px-6 lg:px-8 pb-8 pt-12">
-            <div className="max-w-7xl mx-auto">
-                {/* Main Footer Container - Matches Image Design */}
-                <div className="bg-maid-green rounded-[2rem] text-white p-8 sm:p-12 lg:p-16 relative overflow-hidden shadow-2xl">
+        <footer className="bg-[#050b1a] text-white pt-24 pb-12 relative overflow-hidden">
+            {/* Background Decorative Elements */}
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-30"></div>
+            <div className="absolute top-20 right-10 opacity-10 pointer-events-none">
+                <Sparkles size={120} className="text-primary" />
+            </div>
+            <div className="absolute bottom-20 left-10 opacity-10 pointer-events-none">
+                <Sparkles size={80} className="text-primary" />
+            </div>
 
-                    {/* Brand Blue Version - Applying User Theme */}
-                    <div className="absolute inset-0 z-0 bg-primary"></div>
+            {/* Top Central Logo */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+                <motion.div
+                    initial={{ y: -20, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    className="w-24 h-24 sm:w-28 sm:h-28 bg-white rounded-full p-2 shadow-[0_0_30px_rgba(3,143,212,0.3)] flex items-center justify-center border-4 border-[#050b1a]"
+                >
+                    <img src={logoIcon} alt="Pure Magic Logo" className="w-full h-full object-contain" />
+                </motion.div>
+            </div>
 
-                    <div className="relative z-10 text-center max-w-5xl mx-auto">
-                        {/* Rating Badge */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 10 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="flex items-center justify-center gap-2 mb-6 sm:mb-8"
-                        >
-                            <Star size={18} className="text-yellow-400 fill-yellow-400" />
-                            <span className="text-sm sm:text-base font-semibold tracking-wide">4.7/5 Rating • 500+ Happy Customers</span>
-                        </motion.div>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
 
-                        {/* Heading */}
-                        <motion.h2
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-8 leading-[1.1]"
-                        >
-                            Ready to Experience the <span className="text-orange-400">Difference?</span>
-                        </motion.h2>
+                    {/* Column 1: About */}
+                    <div className="space-y-6">
+                        <h3 className="text-xl sm:text-2xl font-black tracking-tight">
+                            We are <span className="text-primary">Pure Magic!</span>
+                        </h3>
+                        <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
+                            We work with a passion of taking challenges and creating sparkling clean spaces across Australia with professional care.
+                        </p>
+                        <div className="space-y-2">
+                            <h4 className="text-sm font-bold uppercase tracking-widest text-primary">Open Hours:</h4>
+                            <p className="text-gray-300 text-sm font-medium">Mon - Sat: 8 AM - 5 PM</p>
+                            <p className="text-gray-300 text-sm font-medium">Sunday: CLOSED</p>
+                        </div>
+                    </div>
 
-                        {/* Subtitle */}
-                        <motion.p
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="text-base sm:text-lg md:text-xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed font-medium"
-                        >
-                            Professional, reliable, and eco-friendly cleaning solutions in Australia.
-                        </motion.p>
+                    {/* Column 2: Newsletter */}
+                    <div className="space-y-6">
+                        <h3 className="text-xl font-bold">Newsletter</h3>
+                        <p className="text-gray-400 text-sm">Subscribe our newsletter to get our latest update & news.</p>
+                        <form className="relative group" onSubmit={(e) => e.preventDefault()}>
+                            <input
+                                type="email"
+                                placeholder="Your mail address"
+                                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors pr-12"
+                            />
+                            <button className="absolute right-1 top-1 bottom-1 px-3 bg-primary hover:bg-primary-dark rounded-md transition-colors flex items-center justify-center">
+                                <Send size={16} className="text-white" />
+                            </button>
+                        </form>
+                        <div className="flex items-center gap-4 pt-2">
+                            {[Facebook, Twitter, Instagram, Linkedin].map((Icon, idx) => (
+                                <motion.a
+                                    key={idx}
+                                    href="#"
+                                    whileHover={{ scale: 1.2, color: '#038fd4' }}
+                                    className="text-gray-400 hover:text-primary transition-colors"
+                                >
+                                    <Icon size={18} />
+                                </motion.a>
+                            ))}
+                        </div>
+                    </div>
 
-                        {/* CTA Buttons - Matching Image Precisely */}
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            className="flex flex-col sm:flex-row justify-center items-center gap-6 mb-16"
-                        >
-                            <Link
-                                to="/contact"
-                                className="w-full sm:w-auto bg-white text-primary px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:bg-gray-100 transition-all flex items-center justify-center gap-3"
-                            >
-                                <Calculator size={22} className="text-primary" />
-                                Get Free Quote
-                            </Link>
-                            <Link
-                                to="/contact"
-                                className="w-full sm:w-auto border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-all flex items-center justify-center gap-3"
-                            >
-                                <MessageSquare size={22} className="text-white" />
-                                Contact Us
-                            </Link>
-                        </motion.div>
-
-                        {/* Contact Info Bar - Inner Card Style */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="bg-white/5 backdrop-blur-sm rounded-3xl border border-white/10 p-4 sm:p-8 mb-8"
-                        >
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4 divide-y md:divide-y-0 md:divide-x divide-white/10">
-                                {/* CALL NOW */}
-                                <div className="flex items-center gap-4 justify-center md:px-4 pb-6 md:pb-0">
-                                    <div className="w-12 h-12 rounded-xl bg-black/20 flex items-center justify-center shrink-0">
-                                        <Phone size={24} className="text-orange-400" />
-                                    </div>
-                                    <div className="text-left">
-                                        <span className="block text-[10px] font-bold uppercase tracking-widest text-white/60">CALL NOW</span>
-                                        <span className="text-xl sm:text-2xl font-bold text-white tracking-tight">0483 982 111</span>
-                                    </div>
+                    {/* Column 3: Official Info */}
+                    <div className="space-y-6">
+                        <h3 className="text-xl font-bold">Official info:</h3>
+                        <div className="space-y-4">
+                            <div className="flex items-start gap-4 group">
+                                <div className="mt-1 p-2 bg-primary/10 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                                    <MapPin size={18} />
                                 </div>
-
-                                {/* EMAIL US */}
-                                <div className="flex items-center gap-4 justify-center md:px-4 py-6 md:py-0">
-                                    <div className="w-12 h-12 rounded-xl bg-black/20 flex items-center justify-center shrink-0">
-                                        <Mail size={24} className="text-green-400" />
-                                    </div>
-                                    <div className="text-left">
-                                        <span className="block text-[10px] font-bold uppercase tracking-widest text-white/60">EMAIL US</span>
-                                        <span className="text-[14px] sm:text-[16px] font-bold text-white break-all">contact@puremagiccleaning.com.au</span>
-                                    </div>
-                                </div>
-
-                                {/* RESPONSE TIME */}
-                                <div className="flex items-center gap-4 justify-center md:px-4 pt-6 md:pt-0">
-                                    <div className="w-12 h-12 rounded-xl bg-black/20 flex items-center justify-center shrink-0">
-                                        <Clock size={24} className="text-blue-400" />
-                                    </div>
-                                    <div className="text-left">
-                                        <span className="block text-[10px] font-bold uppercase tracking-widest text-white/60">RESPONSE TIME</span>
-                                        <span className="text-xl sm:text-2xl font-bold text-white tracking-tight">Within 2 Hours</span>
-                                    </div>
+                                <div className="text-sm">
+                                    <p className="text-gray-400 font-bold mb-0.5 uppercase tracking-tighter">Location</p>
+                                    <p className="text-gray-300 leading-snug">Canberra, ACT<br />Australia</p>
                                 </div>
                             </div>
-                        </motion.div>
-
-                        {/* Trust Badges - Text with small dot separators */}
-                        <div className="flex flex-wrap justify-center items-center gap-y-2 gap-x-4 text-[10px] sm:text-xs font-bold text-white/60 uppercase tracking-widest">
-                            <div className="flex items-center gap-1.5 border border-white/10 px-3 py-1 rounded-full">
-                                <ShieldCheck size={14} className="text-primary" />
-                                <span>Fully Insured & Licensed</span>
+                            <div className="flex items-start gap-4 group">
+                                <div className="mt-1 p-2 bg-primary/10 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                                    <Phone size={18} />
+                                </div>
+                                <div className="text-sm">
+                                    <p className="text-gray-400 font-bold mb-0.5 uppercase tracking-tighter">Call Now</p>
+                                    <p className="text-white text-lg font-black tracking-tighter">0483 982 111</p>
+                                </div>
                             </div>
-                            <span className="hidden sm:inline opacity-30">|</span>
-                            <div className="flex items-center gap-1.5 border border-white/10 px-3 py-1 rounded-full">
-                                <Clock size={14} className="text-primary" />
-                                <span>24/7 Emergency Service</span>
-                            </div>
-                            <span className="hidden sm:inline opacity-30">|</span>
-                            <div className="flex items-center gap-1.5 border border-white/10 px-3 py-1 rounded-full">
-                                <Star size={14} className="text-primary" />
-                                <span>100% Satisfaction Guarantee</span>
+                            <div className="flex items-start gap-4 group">
+                                <div className="mt-1 p-2 bg-primary/10 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                                    <Mail size={18} />
+                                </div>
+                                <div className="text-sm">
+                                    <p className="text-gray-400 font-bold mb-0.5 uppercase tracking-tighter">Email Us</p>
+                                    <p className="text-gray-300 break-all font-medium">contact@puremagiccleaning.com.au</p>
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                    {/* Column 4: Instagram */}
+                    <div className="space-y-6">
+                        <h3 className="text-xl font-bold">Instagram</h3>
+                        <div className="grid grid-cols-3 gap-2">
+                            {instagramImages.map((img, idx) => (
+                                <motion.div
+                                    key={idx}
+                                    whileHover={{ scale: 1.05, zIndex: 10 }}
+                                    className="aspect-square rounded-lg overflow-hidden border border-white/5 shadow-lg group cursor-pointer"
+                                >
+                                    <img src={img} alt={`Insta ${idx}`} className="w-full h-full object-cover grayscale-[0.5] group-hover:grayscale-0 transition-all duration-500" />
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+
                 </div>
 
-                {/* Footer Credits */}
-                <div className="mt-8 text-center text-gray-400 text-[10px] tracking-widest uppercase font-bold">
-                    <p>© {new Date().getFullYear()} PureMagic Cleaning Australia. All Rights Reserved.</p>
+                {/* Bottom Bar */}
+                <div className="mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p className="text-gray-500 text-xs font-bold uppercase tracking-[0.2em] text-center md:text-left">
+                        {new Date().getFullYear()} © All rights reserved by <span className="text-primary">PureMagic Cleaning</span>
+                    </p>
+                    <div className="flex gap-6 text-[10px] font-black uppercase tracking-[0.3em] text-gray-500">
+                        <Link to="/" className="hover:text-primary transition-colors">Home</Link>
+                        <Link to="/about" className="hover:text-primary transition-colors">Our Story</Link>
+                        <Link to="/contact" className="hover:text-primary transition-colors">Support</Link>
+                    </div>
                 </div>
             </div>
         </footer>
