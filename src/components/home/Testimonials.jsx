@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 
@@ -42,14 +42,26 @@ const testimonials = [
 
 const Testimonials = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [isPaused, setIsPaused] = useState(false);
 
-    const nextTestimonial = () => {
+    const nextTestimonial = useCallback(() => {
         setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    };
+    }, []);
 
     const prevTestimonial = () => {
         setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
     };
+
+    // Auto-slide effect
+    useEffect(() => {
+        if (isPaused) return;
+
+        const timer = setInterval(() => {
+            nextTestimonial();
+        }, 5000); // Change every 5 seconds
+
+        return () => clearInterval(timer);
+    }, [isPaused, nextTestimonial]);
 
     const handleDotClick = (index) => {
         setCurrentIndex(index);
@@ -76,7 +88,7 @@ const Testimonials = () => {
                 <div className="text-center mb-12">
                     <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">What our Customer say?</h2>
                     <p className="text-gray-500 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
-                        Don't just take our word for it. Read what our Canberra clients have to say about our professional, reliable, and magic cleaning services.
+                        Don't just take our word for it. Read what our clients across Newcastle, Central Coast, and Sydney have to say about our professional, reliable, and magic cleaning services.
                     </p>
                 </div>
 
@@ -122,7 +134,11 @@ const Testimonials = () => {
                 </div>
 
                 {/* Main Content Card */}
-                <div className="relative max-w-4xl mx-auto">
+                <div
+                    className="relative max-w-4xl mx-auto"
+                    onMouseEnter={() => setIsPaused(true)}
+                    onMouseLeave={() => setIsPaused(false)}
+                >
                     {/* Navigation Buttons */}
                     <button
                         onClick={prevTestimonial}

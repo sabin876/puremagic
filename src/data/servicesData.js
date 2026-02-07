@@ -23,7 +23,7 @@ export const servicesData = {
         slug: 'commercial-cleaning',
         icon: Building2,
         shortDescription: 'Professional cleaning solutions for offices and commercial spaces to maintain a pristine business environment.',
-        fullDescription: 'Our commercial cleaning services are designed to keep your business environment spotless and professional. We understand that a clean workspace is essential for productivity, employee health, and making a great impression on clients. Our experienced team provides comprehensive cleaning solutions including office sanitization, janitorial services, floor care, window cleaning, and restroom maintenance. We use industrial-grade equipment and eco-friendly products to deliver exceptional results while minimizing disruption to your business operations.',
+        fullDescription: 'Our commercial cleaning services are designed to keep your business environment spotless and professional across Newcastle, Central Coast, and Sydney. We understand that a clean workspace is essential for productivity, employee health, and making a great impression on clients. Our experienced team provides comprehensive cleaning solutions including office sanitization, janitorial services, floor care, window cleaning, and restroom maintenance. We use industrial-grade equipment and eco-friendly products to deliver exceptional results while minimizing disruption to your business operations.',
         image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop',
         features: [
             'Customized cleaning schedules to fit your business hours',
@@ -49,7 +49,7 @@ export const servicesData = {
         slug: 'bnb-cleaning',
         icon: Home,
         shortDescription: 'Fast and thorough turnover cleaning for Airbnb and vacation rentals to ensure 5-star guest reviews.',
-        fullDescription: 'Ensure your guests always arrive to a spotless property with our specialized BnB cleaning services. We understand the importance of quick turnovers and maintaining high cleanliness standards for your vacation rental. Our team is experienced in preparing properties between guests, with meticulous attention to detail that helps you maintain 5-star reviews. From fresh linens to sparkling bathrooms and fully stocked amenities, we handle every aspect of your property preparation.',
+        fullDescription: 'Ensure your guests always arrive to a spotless property with our specialized BnB cleaning services in Newcastle, Central Coast, and Sydney. We understand the importance of quick turnovers and maintaining high cleanliness standards for your vacation rental. Our team is experienced in preparing properties between guests, with meticulous attention to detail that helps you maintain 5-star reviews. From fresh linens to sparkling bathrooms and fully stocked amenities, we handle every aspect of your property preparation.',
         image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=2070&auto=format&fit=crop',
         features: [
             'Same-day or next-day turnover cleaning',
@@ -75,7 +75,7 @@ export const servicesData = {
         slug: 'end-of-lease',
         icon: Sparkles,
         shortDescription: 'Comprehensive bond cleaning services to help you secure your deposit back, guaranteed.',
-        fullDescription: 'Moving out? Our end of lease cleaning service ensures your rental property meets the highest standards required by landlords and real estate agents. We provide a comprehensive deep clean of every area, helping you secure your full bond refund. Our detailed checklist covers everything from carpet steam cleaning to oven degreasing, wall washing, and more. With our bond-back guarantee, you can move with confidence knowing your property will pass inspection.',
+        fullDescription: 'Moving out? Our end of lease cleaning service ensures your rental property meets the highest standards required by landlords and real estate agents in Newcastle, Central Coast, and Sydney. We provide a comprehensive deep clean of every area, helping you secure your full bond refund. Our detailed checklist covers everything from carpet steam cleaning to oven degreasing, wall washing, and more. With our bond-back guarantee, you can move with confidence knowing your property will pass inspection.',
         image: endLeaseImg,
         features: [
             'Complete property deep cleaning',
@@ -101,7 +101,7 @@ export const servicesData = {
         slug: 'pressure-wash',
         icon: Droplets,
         shortDescription: 'High-power pressure washing to remove grime from driveways, patios, and exterior walls.',
-        fullDescription: 'Restore the beauty of your outdoor spaces with our professional pressure washing services. Using high-powered equipment and expert techniques, we remove years of built-up dirt, grime, mold, and stains from driveways, patios, decks, sidewalks, and exterior walls. Our pressure washing not only improves curb appeal but also helps preserve and protect your property surfaces from long-term damage caused by accumulated debris and organic growth.',
+        fullDescription: 'Restore the beauty of your outdoor spaces with our professional pressure washing services across Newcastle, Central Coast, and Sydney. Using high-powered equipment and expert techniques, we remove years of built-up dirt, grime, mold, and stains from driveways, patios, decks, sidewalks, and exterior walls. Our pressure washing not only improves curb appeal but also helps preserve and protect your property surfaces from long-term damage caused by accumulated debris and organic growth.',
         image: pressureWashImg,
         features: [
             'High-pressure cleaning for concrete and pavers',
@@ -127,7 +127,7 @@ export const servicesData = {
         slug: 'strip-and-seal',
         icon: PaintBucket,
         shortDescription: 'Expert floor stripping and sealing to restore the shine and protect your vinyl or hard floors.',
-        fullDescription: 'Revitalize your hard floors with our professional strip and seal service. Over time, floor sealant breaks down, leaving floors looking dull and unprotected. Our expert technicians carefully strip away old sealant and buildup, then apply fresh protective coating that restores the shine and creates a barrier against future wear and staining. This service is ideal for vinyl, linoleum, and other hard floor surfaces in both commercial and residential settings.',
+        fullDescription: 'Revitalize your hard floors with our professional strip and seal service in Newcastle, Central Coast, and Sydney. Over time, floor sealant breaks down, leaving floors looking dull and unprotected. Our expert technicians carefully strip away old sealant and buildup, then apply fresh protective coating that restores the shine and creates a barrier against future wear and staining. This service is ideal for vinyl, linoleum, and other hard floor surfaces in both commercial and residential settings.',
         image: 'https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?q=80&w=2070&auto=format&fit=crop',
         features: [
             'Complete removal of old sealant and wax',
@@ -179,7 +179,7 @@ export const servicesData = {
         slug: 'window-cleaning',
         icon: Sun,
         shortDescription: 'Streak-free window cleaning for crystal clear views, suitable for both residential and commercial.',
-        fullDescription: 'Experience the difference of professionally cleaned windows with our streak-free window cleaning service. Clean windows not only improve the appearance of your property but also allow more natural light to brighten your spaces. Our skilled technicians use professional-grade equipment and techniques to clean interior and exterior windows, including frames, sills, and tracks. Whether you need residential window cleaning or commercial building services, we deliver spotless, crystal-clear results every time.',
+        fullDescription: 'Experience the difference of professionally cleaned windows with our streak-free window cleaning service available in Newcastle, Central Coast, and Sydney. Clean windows not only improve the appearance of your property but also allow more natural light to brighten your spaces. Our skilled technicians use professional-grade equipment and techniques to clean interior and exterior windows, including frames, sills, and tracks. Whether you need residential window cleaning or commercial building services, we deliver spotless, crystal-clear results every time.',
         image: windowCleaningImg,
         features: [
             'Interior and exterior window cleaning',
@@ -231,7 +231,7 @@ export const servicesData = {
         slug: 'carpet-cleaning',
         icon: Sofa,
         shortDescription: 'Professional carpet and upholstery cleaning to remove stains, odors, and allergens for a fresh home.',
-        fullDescription: 'Refresh your carpets and upholstery with our professional deep cleaning service. Using advanced steam cleaning and extraction methods, we remove embedded dirt, stubborn stains, allergens, and odors that regular vacuuming cannot eliminate. Our eco-friendly cleaning solutions are safe for your family and pets while being tough on stains and bacteria. Whether you need single room cleaning or whole-house carpet care, we restore your carpets to their original beauty and extend their lifespan.',
+        fullDescription: 'Refresh your carpets and upholstery with our professional deep cleaning service in Newcastle, Central Coast, and Sydney. Using advanced steam cleaning and extraction methods, we remove embedded dirt, stubborn stains, allergens, and odors that regular vacuuming cannot eliminate. Our eco-friendly cleaning solutions are safe for your family and pets while being tough on stains and bacteria. Whether you need single room cleaning or whole-house carpet care, we restore your carpets to their original beauty and extend their lifespan.',
         image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070&auto=format&fit=crop',
         features: [
             'Hot water extraction (steam cleaning)',

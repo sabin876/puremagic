@@ -87,7 +87,8 @@ const Hero = () => {
                             initial={{ opacity: 0, scale: 0.8 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.8, delay: 0.6 }}
-                            className="text-[#2d8a63] inline-block relative"
+                            className="inline-block relative"
+                            style={{ color: 'rgb(0, 255, 148)' }}
                         >
                             <span className="relative z-10">Services in Australia</span>
                             {/* Shimmer Effect */}
@@ -124,7 +125,7 @@ const Hero = () => {
                         transition={{ duration: 0.8, delay: 1.2 }}
                         className="text-xs sm:text-lg md:text-xl text-gray-100 mb-10 sm:mb-12 leading-relaxed max-w-[280px] sm:max-w-2xl mx-auto font-medium"
                     >
-                        Trusted by hundreds of satisfied customers across Australia. Professional cleaners offering house cleaning, commercial cleaning, carpet cleaning, and couch cleaning services.
+                        Trusted by hundreds of satisfied customers across Newcastle, Central Coast, and Sydney. Professional cleaners offering house cleaning, commercial cleaning, carpet cleaning, and couch cleaning services.
                     </motion.p>
 
                     {/* Buttons with Enhanced Entrance */}

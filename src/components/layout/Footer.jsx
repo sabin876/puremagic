@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, Send, Facebook, Instagram, Linkedin, Twitter, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import logoIcon from '../../assets/logo_icon_only.png';
+import footerLogo from '../../assets/footer_logo_new.png';
 
 const Footer = () => {
     const instagramImages = [
@@ -31,9 +31,9 @@ const Footer = () => {
                     initial={{ y: -20, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     viewport={{ once: true }}
-                    className="w-24 h-24 sm:w-28 sm:h-28 bg-white rounded-full p-2 shadow-[0_0_30px_rgba(3,143,212,0.3)] flex items-center justify-center border-4 border-[#050b1a]"
+                    className="w-24 h-24 sm:w-28 sm:h-28 bg-white rounded-full p-2 shadow-[0_0_30px_rgba(3,143,212,0.3)] flex items-center justify-center border-4 border-[#050b1a] overflow-hidden"
                 >
-                    <img src={logoIcon} alt="Pure Magic Logo" className="w-full h-full object-contain" />
+                    <img src={footerLogo} alt="Pure Magic Cleaning Services Logo" className="w-full h-full object-contain" />
                 </motion.div>
             </div>
 
@@ -43,7 +43,7 @@ const Footer = () => {
                     {/* Column 1: About */}
                     <div className="space-y-6">
                         <h3 className="text-xl sm:text-2xl font-black tracking-tight">
-                            We are <span className="text-primary">Pure Magic!</span>
+                            We are <span className="text-primary">Pure Magic Cleaning Services!</span>
                         </h3>
                         <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
                             We work with a passion of taking challenges and creating sparkling clean spaces across Australia with professional care.
@@ -92,8 +92,8 @@ const Footer = () => {
                                     <MapPin size={18} />
                                 </div>
                                 <div className="text-sm">
-                                    <p className="text-gray-400 font-bold mb-0.5 uppercase tracking-tighter">Location</p>
-                                    <p className="text-gray-300 leading-snug">Canberra, ACT<br />Australia</p>
+                                    <p className="text-gray-400 font-bold mb-0.5 uppercase tracking-tighter">Locations</p>
+                                    <p className="text-gray-300 leading-snug">Newcastle • Central Coast • Sydney<br />Australia</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4 group">
@@ -138,7 +138,7 @@ const Footer = () => {
                 {/* Bottom Bar */}
                 <div className="mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-gray-500 text-xs font-bold uppercase tracking-[0.2em] text-center md:text-left">
-                        {new Date().getFullYear()} © All rights reserved by <span className="text-primary">PureMagic Cleaning</span>
+                        {new Date().getFullYear()} © All rights reserved by <span className="text-primary">Pure Magic Cleaning Services</span>
                     </p>
                     <div className="flex gap-6 text-[10px] font-black uppercase tracking-[0.3em] text-gray-500">
                         <Link to="/" className="hover:text-primary transition-colors">Home</Link>

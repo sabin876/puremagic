@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import {
     Menu, X, Phone, ChevronDown, Facebook, Instagram, Linkedin, Twitter,
     Building2, Home, Key, Waves, Layers, Scissors, Wind, Brush, Sparkles, Trash2,
-    Briefcase, ShieldCheck, ClipboardCheck
+    Briefcase, ShieldCheck, ClipboardCheck, MapPin
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import VacuumIcon from '../common/VacuumIcon';
@@ -56,11 +56,11 @@ const Navbar = () => {
                 className="bg-gradient-to-r from-primary-dark via-primary to-primary-light py-1 sm:py-1.5 px-4 shadow-sm min-h-[36px] flex items-center border-b border-white/10"
             >
                 <div className="container mx-auto flex justify-between items-center relative gap-4">
-                    {/* Left: Location/Hours */}
+                    {/* Left: Locations */}
                     <div className="hidden md:flex items-center gap-4 text-white/90 text-[10px] sm:text-xs">
                         <div className="flex items-center gap-1.5">
-                            <Building2 size={14} className="text-secondary" />
-                            <span className="font-medium tracking-wide">Sydney, Australia</span>
+                            <MapPin size={14} className="text-secondary" />
+                            <span className="font-medium tracking-wide">Newcastle • Central Coast • Sydney</span>
                         </div>
                         <div className="h-3 w-[1px] bg-white/20"></div>
                         <div className="flex items-center gap-1.5">

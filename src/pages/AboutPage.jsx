@@ -21,7 +21,7 @@ const AboutPage = () => {
         },
         {
             title: "Highly Rated Cleaning",
-            description: "Recognized as a leading cleaning service provider in Canberra with hundreds of five-star reviews.",
+            description: "Recognized as a leading cleaning service provider in Newcastle, Central Coast, and Sydney with hundreds of five-star reviews.",
             icon: Trophy,
             color: "text-yellow-500",
             bgColor: "bg-yellow-50"
@@ -160,7 +160,7 @@ const AboutPage = () => {
                                 </h2>
 
                                 <p className="text-gray-500 text-lg leading-relaxed mb-10">
-                                    Pure Magic Cleaning has been a leader in professional cleaning for over 18 years.
+                                    Pure Magic Cleaning Services has been a leader in professional cleaning for over 18 years.
                                     We provide comprehensive cleaning solutions tailored to your unique Needs,
                                     ensuring a sparkling and healthy environment for your family or Business.
                                 </p>
@@ -236,7 +236,7 @@ const AboutPage = () => {
             {/* Brands Section (Subtle) */}
             <div className="py-12 border-b border-gray-100">
                 <div className="container mx-auto px-4 text-center">
-                    <p className="text-gray-400 text-xs font-bold uppercase tracking-[0.3em] mb-8">Trusted by families & businesses across Canberra</p>
+                    <p className="text-gray-400 text-xs font-bold uppercase tracking-[0.3em] mb-8">Trusted by families & businesses across Newcastle, Central Coast & Sydney</p>
                     <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-40 grayscale group-hover:grayscale-0 transition-all duration-1000">
                         {/* Placeholder logos or icons */}
                         <div className="text-2xl font-black text-gray-500">HOMESTAY</div>

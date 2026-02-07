@@ -95,8 +95,8 @@ const Contact = () => {
                                 </div>
                                 <div>
                                     <h4 className="font-bold text-gray-900 text-lg mb-1">Location</h4>
-                                    <p className="text-gray-700 font-medium text-base">Serving all of Canberra</p>
-                                    <p className="text-sm text-gray-500 mt-0.5">ACT, Australia</p>
+                                    <p className="text-gray-700 font-medium text-base">Newcastle • Central Coast • Sydney</p>
+                                    <p className="text-sm text-gray-500 mt-0.5">NSW, Australia</p>
                                 </div>
                             </div>
                         </Tilt>
@@ -219,7 +219,7 @@ const Contact = () => {
                     className="w-full h-[250px] sm:h-[350px] md:h-[400px] lg:h-[450px] rounded-3xl overflow-hidden shadow-lg border border-gray-100 relative group"
                 >
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d104278.43129592658!2d149.01254388657497!3d35.28131349942485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b164a69b0db375d%3A0x500ea6ea441ab30!2sCanberra%20ACT%2C%20Australia!5e0!3m2!1sen!2s!4v1715433445678!5m2!1sen!2s"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.923123456789!2d151.2092955!3d-33.8688197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae401e8b983f%3A0x5017d681632ad60!2sSydney%20NSW%2C%20Australia!5e0!3m2!1sen!2s!4v1715433445678!5m2!1sen!2s"
                         width="100%"
                         height="100%"
                         style={{ border: 0 }}
