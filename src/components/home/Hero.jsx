@@ -87,7 +87,7 @@ const Hero = () => {
                             initial={{ opacity: 0, scale: 0.8 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.8, delay: 0.6 }}
-                            className="text-primary inline-block relative"
+                            className="text-[#2d8a63] inline-block relative"
                         >
                             <span className="relative z-10">Services in Australia</span>
                             {/* Shimmer Effect */}

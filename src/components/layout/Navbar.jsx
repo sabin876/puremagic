@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import VacuumIcon from '../common/VacuumIcon';
+import SparkleEffect from '../common/SparkleEffect';
 
 
 const Navbar = () => {
@@ -52,42 +53,56 @@ const Navbar = () => {
                 initial={{ y: -100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="bg-primary/30 backdrop-blur-md py-1.5 sm:py-2 px-4 shadow-sm min-h-[32px] flex items-center"
+                className="bg-gradient-to-r from-primary-dark via-primary to-primary-light py-1 sm:py-1.5 px-4 shadow-sm min-h-[36px] flex items-center border-b border-white/10"
             >
-                <div className="container mx-auto flex justify-between items-center relative">
-                    {/* Centered Promotional Message */}
-                    <p className="text-primary-dark font-medium text-[10px] sm:text-xs md:text-sm tracking-wide flex-grow text-center px-2 sm:pl-20">
-                        ✨ Sparkling Homes, Happy Hearts – Experience the <span className="font-bold underline">Pure Magic Clean</span> Today! ✨
+                <div className="container mx-auto flex justify-between items-center relative gap-4">
+                    {/* Left: Location/Hours */}
+                    <div className="hidden md:flex items-center gap-4 text-white/90 text-[10px] sm:text-xs">
+                        <div className="flex items-center gap-1.5">
+                            <Building2 size={14} className="text-secondary" />
+                            <span className="font-medium tracking-wide">Sydney, Australia</span>
+                        </div>
+                        <div className="h-3 w-[1px] bg-white/20"></div>
+                        <div className="flex items-center gap-1.5">
+                            <ClipboardCheck size={14} className="text-secondary" />
+                            <span className="font-medium tracking-wide">Mon - Sat: 8am - 6pm</span>
+                        </div>
+                    </div>
+
+                    {/* Center: Promotional Message */}
+                    <p className="text-white font-medium text-[10px] sm:text-xs md:text-sm tracking-wide flex-grow text-center">
+                        ✨ <span className="hidden sm:inline">Sparkling Homes, Happy Hearts –</span> Experience the <span className="font-bold underline decoration-secondary/50 underline-offset-2">Pure Magic Clean</span> Today! ✨
                     </p>
 
-                    <div className="flex items-center gap-2 hidden sm:flex pr-2">
+                    {/* Right: Social Links */}
+                    <div className="flex items-center gap-2.5 pr-2">
+                        <span className="hidden xl:inline text-white/90 text-[11px] font-bold uppercase tracking-widest mr-1">Connect with us:</span>
                         <motion.a
-                            whileHover={{ scale: 1.15, rotate: 5 }}
+                            whileHover={{ scale: 1.1, y: -2 }}
                             whileTap={{ scale: 0.9 }}
-                            href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-7 h-7 bg-white rounded-full flex items-center justify-center text-primary-dark hover:bg-gray-100 transition-colors"
+                            href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+                            className="w-8 h-8 bg-white rounded-full flex items-center justify-center text-maid-green hover:bg-maid-green hover:text-white transition-all duration-300 shadow-sm border border-white/20"
+                            title="Facebook"
                         >
-                            <Facebook size={14} />
+                            <Facebook size={16} />
                         </motion.a>
                         <motion.a
-                            whileHover={{ scale: 1.15, rotate: 5 }}
+                            whileHover={{ scale: 1.1, y: -2 }}
                             whileTap={{ scale: 0.9 }}
-                            href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-7 h-7 bg-white rounded-full flex items-center justify-center text-primary-dark hover:bg-gray-100 transition-colors"
+                            href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+                            className="w-8 h-8 bg-white rounded-full flex items-center justify-center text-maid-green hover:bg-maid-green hover:text-white transition-all duration-300 shadow-sm border border-white/20"
+                            title="Instagram"
                         >
-                            <Instagram size={14} />
+                            <Instagram size={16} />
                         </motion.a>
                         <motion.a
-                            whileHover={{ scale: 1.15, rotate: 5 }}
+                            whileHover={{ scale: 1.1, y: -2 }}
                             whileTap={{ scale: 0.9 }}
-                            href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-7 h-7 bg-white rounded-full flex items-center justify-center text-primary-dark hover:bg-gray-100 transition-colors"
+                            href="https://twitter.com" target="_blank" rel="noopener noreferrer"
+                            className="w-8 h-8 bg-white rounded-full flex items-center justify-center text-maid-green hover:bg-maid-green hover:text-white transition-all duration-300 shadow-sm border border-white/20"
+                            title="Twitter"
                         >
-                            <Linkedin size={14} />
-                        </motion.a>
-                        <motion.a
-                            whileHover={{ scale: 1.15, rotate: 5 }}
-                            whileTap={{ scale: 0.9 }}
-                            href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="w-7 h-7 bg-white rounded-full flex items-center justify-center text-primary-dark hover:bg-gray-100 transition-colors"
-                        >
-                            <Twitter size={14} />
+                            <Twitter size={16} />
                         </motion.a>
                     </div>
                 </div>
@@ -106,16 +121,73 @@ const Navbar = () => {
 
                     {/* Logo Section */}
                     <div className="flex-shrink-0 flex items-center relative z-50">
-                        <Link to="/" className="flex flex-col items-center leading-none group">
-                            <div className="flex items-center">
-                                <span className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-primary tracking-tighter">Pure</span>
+                        <Link to="/" className="flex flex-col items-center leading-none group relative">
+                            {/* Logo Shine Effect Background */}
+                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -skew-x-12 translate-x-[-200%] group-hover:animate-[shine_1.5s_ease-in-out_infinite] pointer-events-none" />
+
+                            {/* Sparkle Effect */}
+                            <SparkleEffect count={4} />
+
+                            <div className="flex items-center relative">
+                                <motion.span
+                                    className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-primary tracking-tighter"
+                                    animate={{
+                                        textShadow: ["0 0 0px rgba(3,143,212,0)", "0 0 10px rgba(3,143,212,0.3)", "0 0 0px rgba(3,143,212,0)"]
+                                    }}
+                                    transition={{ duration: 3, repeat: Infinity }}
+                                >
+                                    Pure
+                                </motion.span>
                                 <div className="flex items-baseline">
-                                    <span className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-primary tracking-tighter">M</span>
-                                    <VacuumIcon className="w-6 h-6 sm:w-9 sm:h-9 md:w-11 md:h-11 mx-[1px] self-end mb-0.5 sm:mb-1" />
-                                    <span className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-primary tracking-tighter">gic</span>
+                                    <motion.span
+                                        className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-primary tracking-tighter"
+                                        animate={{
+                                            textShadow: ["0 0 0px rgba(3,143,212,0)", "0 0 10px rgba(3,143,212,0.3)", "0 0 0px rgba(3,143,212,0)"]
+                                        }}
+                                        transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
+                                    >
+                                        M
+                                    </motion.span>
+                                    <motion.div
+                                        animate={{
+                                            rotate: [0, -2, 2, -2, 0],
+                                            x: [0, -1, 1, -1, 0]
+                                        }}
+                                        transition={{
+                                            duration: 0.5,
+                                            repeat: Infinity,
+                                            repeatType: "mirror",
+                                            ease: "easeInOut"
+                                        }}
+                                        className="inline-flex items-center"
+                                    >
+                                        <VacuumIcon className="w-6 h-6 sm:w-9 sm:h-9 md:w-11 md:h-11 mx-[1px] self-end mb-0.5 sm:mb-1 filter drop-shadow(0 0 5px rgba(69,198,145,0.4))" />
+                                    </motion.div>
+                                    <motion.span
+                                        className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-primary tracking-tighter"
+                                        animate={{
+                                            textShadow: ["0 0 0px rgba(3,143,212,0)", "0 0 10px rgba(3,143,212,0.3)", "0 0 0px rgba(3,143,212,0)"]
+                                        }}
+                                        transition={{ duration: 3, repeat: Infinity, delay: 1 }}
+                                    >
+                                        gic
+                                    </motion.span>
                                 </div>
                             </div>
-                            <span className="text-[0.6rem] sm:text-xs md:text-sm font-bold text-primary tracking-[0.2em] mt-1">SERVICES</span>
+                            <motion.span
+                                className="text-[0.6rem] sm:text-xs md:text-sm font-bold text-primary tracking-[0.2em] mt-1 relative"
+                                animate={{ opacity: [0.7, 1, 0.7] }}
+                                transition={{ duration: 2, repeat: Infinity }}
+                            >
+                                SERVICES
+                                <motion.div
+                                    className="absolute -right-4 -top-1"
+                                    animate={{ scale: [1, 1.2, 1], rotate: [0, 10, 0] }}
+                                    transition={{ duration: 1.5, repeat: Infinity }}
+                                >
+                                    <Sparkles size={12} className="text-maid-green" />
+                                </motion.div>
+                            </motion.span>
                         </Link>
                     </div>
 
@@ -307,19 +379,31 @@ const Navbar = () => {
                                                         className={`transition-transform ${activeDropdown === link.name ? 'rotate-180' : ''}`}
                                                     />
                                                 </button>
-                                                <div className="pl-3 sm:pl-4 pb-2 space-y-1 sm:space-y-1.5 text-gray-600">
-                                                    {link.items.map((item, i) => (
-                                                        <Link
-                                                            key={i}
-                                                            to={item.slug ? `/services/${item.slug}` : (item.name === "About Us" ? "/about" : "#")}
-                                                            className="flex items-center gap-3 py-2 text-sm sm:text-base font-medium"
-                                                            onClick={() => { setActiveDropdown(null); setIsOpen(false); }}
+                                                <AnimatePresence>
+                                                    {activeDropdown === link.name && (
+                                                        <motion.div
+                                                            initial={{ height: 0, opacity: 0 }}
+                                                            animate={{ height: 'auto', opacity: 1 }}
+                                                            exit={{ height: 0, opacity: 0 }}
+                                                            transition={{ duration: 0.3, ease: "easeInOut" }}
+                                                            className="overflow-hidden"
                                                         >
-                                                            {item.icon && <item.icon size={18} className="text-primary/70" />}
-                                                            {item.name}
-                                                        </Link>
-                                                    ))}
-                                                </div>
+                                                            <div className="pl-3 sm:pl-4 pb-2 space-y-1 sm:space-y-1.5 text-gray-600">
+                                                                {link.items.map((item, i) => (
+                                                                    <Link
+                                                                        key={i}
+                                                                        to={item.slug ? `/services/${item.slug}` : (item.name === "About Us" ? "/about" : "#")}
+                                                                        className="flex items-center gap-3 py-2 text-sm sm:text-base font-medium"
+                                                                        onClick={() => { setActiveDropdown(null); setIsOpen(false); }}
+                                                                    >
+                                                                        {item.icon && <item.icon size={18} className="text-primary/70" />}
+                                                                        {item.name}
+                                                                    </Link>
+                                                                ))}
+                                                            </div>
+                                                        </motion.div>
+                                                    )}
+                                                </AnimatePresence>
                                             </div>
                                         ) : (
                                             <Link
